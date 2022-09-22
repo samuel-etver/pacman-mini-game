@@ -1,4 +1,4 @@
-# pacman-mini-game
+# Pacman Mini Game
 
 ## Tools
 
