@@ -1,0 +1,78 @@
+{
+  "collision-matrix": [
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      null,
+      true
+    ],
+    [
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      true,
+      false,
+      false
+    ]
+  ],
+  "excluded-modules": [
+    "Spine Skeleton",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "group-list": [
+    "default",
+    "Actor",
+    "Enemy",
+    "Collectable",
+    "Portal"
+  ],
+  "start-scene": "6d68ba19-3d7e-4c00-8c25-2813a19c4d33",
+  "design-resolution-width": 1000,
+  "design-resolution-height": 450,
+  "fit-width": true,
+  "fit-height": true,
+  "use-project-simulator-setting": true,
+  "simulator-orientation": true,
+  "use-customize-simulator": false,
+  "simulator-resolution": {
+    "width": 640,
+    "height": 1136
+  },
+  "last-module-event-record-time": 1657548835094,
+  "preview-port": 7456,
+  "clear-simulator-cache": true,
+  "facebook": {
+    "appID": "",
+    "audience": {
+      "enable": false
+    },
+    "enable": false,
+    "live": {
+      "enable": false
+    }
+  },
+  "migrate-history": [
+    "cloud-function"
+  ]
+}

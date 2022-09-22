@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="button-13(close).svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.3786088"
+     inkscape:cx="166.90429"
+     inkscape:cy="199.69656"
+     inkscape:window-width="1863"
+     inkscape:window-height="1129"
+     inkscape:window-x="2382"
+     inkscape:window-y="95"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2566"
+       x="-0.047810462"
+       y="-0.047810462"
+       width="1.0956209"
+       height="1.0956209">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.740153"
+         id="feGaussianBlur2568" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter9312"
+       x="-0.046084147"
+       y="-0.046084147"
+       width="1.0921683"
+       height="1.0921683">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.0166857"
+         id="feGaussianBlur9314" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter856"
+       x="-0.073930015"
+       y="-0.016463406"
+       width="1.14786"
+       height="1.0329268">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.36320754"
+         id="feGaussianBlur858" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1586"
+       x="-0.017925926"
+       y="-0.017925926"
+       width="1.0358519"
+       height="1.0358519">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.31697912"
+         id="feGaussianBlur1588" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g11598"
+       transform="matrix(0.60077669,0,0,0.60077669,10.558029,3.2715189)"
+       inkscape:export-filename="button-13(close).png"
+       inkscape:export-xdpi="232.78"
+       inkscape:export-ydpi="232.78">
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke-width:0.341376;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;filter:url(#filter2566)"
+         id="circle2564"
+         cx="104.18785"
+         cy="91.284653"
+         r="43.676289"
+         transform="matrix(0.48583025,0,0,0.48583025,-0.92291773,-12.905869)" />
+      <circle
+         style="fill:#35cf8c;fill-opacity:1;stroke-width:0.16585;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;filter:url(#filter1586)"
+         id="path188"
+         cx="49.694691"
+         cy="31.442974"
+         r="21.219263" />
+      <circle
+         style="fill:#2a9b69;fill-opacity:1;stroke-width:0.137974;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+         id="circle294"
+         cx="49.694691"
+         cy="31.442974"
+         r="17.652552" />
+      <g
+         id="g8572"
+         transform="matrix(0.34353386,-0.34353386,0.34353386,0.34353386,-70.922091,27.825071)"
+         style="mix-blend-mode:normal;fill:#004b2a;fill-opacity:1;filter:url(#filter9312)">
+        <rect
+           style="opacity:1;fill:#004b2a;fill-opacity:1;stroke-width:0.287591;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+           id="rect8568"
+           width="11.790855"
+           height="52.947617"
+           x="163.03679"
+           y="156.54044"
+           rx="5.8954277"
+           ry="6.0004883" />
+        <rect
+           style="opacity:1;fill:#004b2a;fill-opacity:1;stroke-width:0.287591;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+           id="rect8570"
+           width="11.790855"
+           height="52.947617"
+           x="177.11882"
+           y="-195.40602"
+           rx="5.8954277"
+           ry="6.0004883"
+           transform="rotate(90)" />
+      </g>
+      <g
+         id="g8566"
+         transform="matrix(0.34353386,-0.34353386,0.34353386,0.34353386,-71.210835,26.605322)"
+         style="fill:#d5ff9d;fill-opacity:1;stroke:none;stroke-opacity:1">
+        <rect
+           style="opacity:1;fill:#d5ff9d;fill-opacity:1;stroke:none;stroke-width:0.287591;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill"
+           id="rect2622"
+           width="11.790855"
+           height="52.947617"
+           x="163.03679"
+           y="156.54044"
+           rx="5.8954277"
+           ry="6.0004883" />
+        <rect
+           style="opacity:1;fill:#d5ff9d;fill-opacity:1;stroke:none;stroke-width:0.287591;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter856)"
+           id="rect8562"
+           width="11.790855"
+           height="52.947617"
+           x="177.11882"
+           y="-195.40602"
+           rx="5.8954277"
+           ry="6.0004883"
+           transform="rotate(90)" />
+      </g>
+    </g>
+  </g>
+</svg>

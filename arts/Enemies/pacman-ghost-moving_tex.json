@@ -1,0 +1,1 @@
+{"width":512,"SubTexture":[{"width":256,"y":1,"height":288,"name":"ghost-body","x":1},{"width":46,"y":291,"height":43,"name":"ghost-eye","x":1}],"height":512,"name":"pacman-ghost-moving","imagePath":"pacman-ghost-moving_tex.png"}

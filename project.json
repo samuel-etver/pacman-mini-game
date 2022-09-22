@@ -1,0 +1,8 @@
+{
+  "engine": "cocos2d-html5",
+  "packages": "packages",
+  "version": "2.4.10",
+  "name": "PacMan",
+  "id": "0f3fc568-14c0-4fa9-88b3-b829bbf09fab",
+  "isNew": false
+}
