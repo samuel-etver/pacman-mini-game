@@ -55,6 +55,10 @@ cc.Class({
         }
 
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
+       
+        let animation = this.getComponent(cc.Animation);
+        animation.play();
+
     },
 
 
@@ -90,6 +94,7 @@ cc.Class({
 
     update (dt) {
         this.movementEnabled && this.updatePosition(dt);
+        this.updateAnimation();
     },
 
 
@@ -204,7 +209,7 @@ cc.Class({
 
 
     changeDirection (direction) {
-        this.newDirection = direction;
+        this.newDirection = direction;        
     },
 
 
@@ -365,4 +370,8 @@ cc.Class({
     lose () {
         globalEventSystem.publish('lose');
     },
+
+    updateAnimation () {
+
+    }
 });

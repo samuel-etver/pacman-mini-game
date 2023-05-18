@@ -37,7 +37,7 @@
           24 
         </fps>
         <path>
-          "+outputs\\.mp4"
+          "+outputs\\.spritesheet"
         </path>
         <bpp>
           32 
@@ -85,7 +85,7 @@
             <property max="100" min="0" name="Bottom Padding" type="int" value="0"/>
             <property max="100" min="0" name="Left Padding" type="int" value="0"/>
             <property max="100" min="0" name="Right Padding" type="int" value="0"/>
-            <property max="100" min="1" name="Scale" type="int" value="100"/>
+            <property max="100" min="1" name="Scale" type="int" value="50"/>
             <property name="Trim Empty Space" type="bool" value="true"/>
             </formatProperties>
           <formatProperties ext="tif">
@@ -409,6 +409,9 @@
               </params>
             <ports>
               </ports>
+            <dagNodePos>
+              25005 25005 
+            </dagNodePos>
             <numberId>
               0 
             </numberId>
@@ -458,7 +461,7 @@
           </default>
           </sc>
         <nodePos>
-          1.234e+09 5.678e+09 
+          24500 25550 
         </nodePos>
         <camera>
           <cameraSize>
@@ -503,7 +506,7 @@
           </default>
           </sc>
         <nodePos>
-          1.234e+09 5.678e+09 
+          24500 25500 
         </nodePos>
         </pegbar>
       <pegbar id="Col1">
@@ -537,7 +540,7 @@
           </default>
           </sc>
         <nodePos>
-          1.234e+09 5.678e+09 
+          24620 25500 
         </nodePos>
         </pegbar>
       <grid_dimension>
@@ -557,6 +560,9 @@
             </params>
           <ports>
             </ports>
+          <dagNodePos>
+            25120 25000 
+          </dagNodePos>
           <numberId>
             0 
           </numberId>
@@ -583,6 +589,9 @@
               <Toonz_xsheetFx id='4'/>
             </source>
             </ports>
+          <dagNodePos>
+            25235 24995 
+          </dagNodePos>
           <numberId>
             0 
           </numberId>
@@ -611,5 +620,6 @@
     "| #3   15 апр 23   17:29   DESKTOP-DB1FSam             |"
     "| #4   15 апр 23   17:47   DESKTOP-DB1FSam             |"
     "| #5   15 апр 23   18:12   DESKTOP-DB1FSam             |"
+    "| #6   25 апр 23   22:44   DESKTOP-DB1FSam             |"
   </history>
   </tnz>

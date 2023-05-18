@@ -18,7 +18,7 @@ cc.Class({
         this.onPlayerStopped = this.onPlayerStopped.bind(this);
         globalEventSystem.subscribe('player-stopped', this.onPlayerStopped);
 
-        this.animation = this.getComponent(dragonBones.ArmatureDisplay);
+        this.animation = this.getComponent(sp.Skeleton);
         this.collider  = this.getComponent(cc.Collider);
         this.deactivateEnergizer();
     },
