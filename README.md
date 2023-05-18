@@ -2,4 +2,4 @@
 
 ## Tools
 
-Cocos Creator 2.4.10
+Cocos Creator 2.4.11
