@@ -21,6 +21,8 @@ cc.Class({
         this.currentRoadId = undefined;
         this.initialDirection = Directions.NONE;
         this.initialPosition = undefined;
+        this.initialScaleX = undefined;
+        this.initialScaleY = undefined;
         this.rankNormal = 0;
         this.superPowerEnergizerTimer = undefined;
         this.movementEnabled = false;
@@ -46,6 +48,8 @@ cc.Class({
         this.rankNormal = this.rankable.getRank();
         this.scorable.lives = globalStorage.scene.playerLivesCountMax;
 
+        this.initialScaleX = this.node.scaleX;
+        this.initialScaleY = this.node.scaleY;
         this.initialPosition = this.findInitialPosition();
         if (this.initialPosition) {
             this.movePlayerToInitialPosition();
@@ -71,6 +75,9 @@ cc.Class({
         this.currentRoadId = this.initialPosition.roadId;
         this.node.x = this.initialPosition.x;
         this.node.y = this.initialPosition.y;
+        this.node.scaleX = this.initialScaleX;
+        this.node.scaleY = this.initialScaleY;
+        this.node.angle = 0;
     },
 
 
@@ -163,6 +170,8 @@ cc.Class({
 
         this.node.x = currentPosition.x;
         this.node.y = currentPosition.y;
+        this.node.angle = Directions.getRotation(this.currentDirection) ?? this.node.rotation;
+        this.node.scaleX = Directions.getScale(this.currentDirection);// ?? this.node.scaleX;
     },
 
 
@@ -372,6 +381,5 @@ cc.Class({
     },
 
     updateAnimation () {
-
     }
 });

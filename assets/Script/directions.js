@@ -6,6 +6,20 @@ let Directions = cc.Enum({
     WEST: 4,
 });
 
+let rotations = {
+    [Directions.NORTH]: 90,
+    [Directions.SOUTH]: -90,
+    [Directions.WEST]: 0,
+    [Directions.EAST]: 0
+};
+
+let scales = {
+    [Directions.NORTH]: 1,
+    [Directions.SOUTH]: 1,
+    [Directions.WEST]: -1,
+    [Directions.EAST]: 1
+};
+
 
 let allDirections = [
     Directions.NONE,
@@ -76,6 +90,16 @@ Directions.getText = function (direction) {
             return 'none';
     }
     return '';
+};
+
+
+Directions.getRotation = function(direction) {
+    return rotations[direction];
+};
+
+
+Directions.getScale = function(direction) {
+    return scales[direction];
 };
 
 
