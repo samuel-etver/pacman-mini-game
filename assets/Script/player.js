@@ -19,19 +19,23 @@ cc.Class({
         this.currentDirection = undefined;
         this.newDirection = undefined;
         this.currentRoadId = undefined;
-        this.initialDirection = Directions.NONE;
-        this.initialPosition = undefined;
-        this.initialScaleX = undefined;
-        this.initialScaleY = undefined;
+        this.currentDistance = 0;
+        this.initial = {
+            direction: Directions.NONE,
+            position: undefined,
+            scaleX: undefined,
+            scaleY: undefined
+        };
         this.rankNormal = 0;
         this.superPowerEnergizerTimer = undefined;
         this.movementEnabled = false;
+        this.animation = undefined;
     },
 
 
     onLoad () {
         this.currentDirection =
-        this.newDirection = this.initialDirection;
+        this.newDirection = this.initial.direction;
         this.roadNetworkGraph = globalStorage.scene.roadNetworkGraph;
 
         [
@@ -48,10 +52,10 @@ cc.Class({
         this.rankNormal = this.rankable.getRank();
         this.scorable.lives = globalStorage.scene.playerLivesCountMax;
 
-        this.initialScaleX = this.node.scaleX;
-        this.initialScaleY = this.node.scaleY;
-        this.initialPosition = this.findInitialPosition();
-        if (this.initialPosition) {
+        this.initial.scaleX = this.node.scaleX;
+        this.initial.scaleY = this.node.scaleY;
+        this.initial.position = this.findInitialPosition();
+        if (this.initial.position) {
             this.movePlayerToInitialPosition();
         }
         else {
@@ -60,8 +64,8 @@ cc.Class({
 
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
-        let animation = this.getComponent(cc.Animation);
-        animation.play();
+        this.animation = this.getComponent(cc.Animation);
+        this.animation.play();
 
     },
 
@@ -72,11 +76,11 @@ cc.Class({
 
 
     movePlayerToInitialPosition () {
-        this.currentRoadId = this.initialPosition.roadId;
-        this.node.x = this.initialPosition.x;
-        this.node.y = this.initialPosition.y;
-        this.node.scaleX = this.initialScaleX;
-        this.node.scaleY = this.initialScaleY;
+        this.currentRoadId = this.initial.position.roadId;
+        this.node.x = this.initial.position.x;
+        this.node.y = this.initial.position.y;
+        this.node.scaleX = this.initial.scaleX;
+        this.node.scaleY = this.initial.scaleY;
         this.node.angle = 0;
     },
 
@@ -100,7 +104,13 @@ cc.Class({
 
 
     update (dt) {
+        let prevPosition = this.node.position;
+
         this.movementEnabled && this.updatePosition(dt);
+
+        this.currentDistance = Math.abs(this.node.x - prevPosition.x) +
+                               Math.abs(this.node.y - prevPosition.y);
+
         this.updateAnimation();
     },
 
@@ -170,8 +180,8 @@ cc.Class({
 
         this.node.x = currentPosition.x;
         this.node.y = currentPosition.y;
-        this.node.angle = Directions.getRotation(this.currentDirection) ?? this.node.rotation;
-        this.node.scaleX = Directions.getScale(this.currentDirection);// ?? this.node.scaleX;
+        this.node.angle = Directions.getRotation(this.currentDirection) ?? this.node.angle;
+        this.node.scaleX = Directions.getScale(this.currentDirection) ?? this.node.scaleX;
     },
 
 
@@ -332,7 +342,7 @@ cc.Class({
             this.scheduleOnce(() => {
                 this.movePlayerToInitialPosition();
                 this.currentDirection =
-                this.newDirection = this.initialDirection;
+                this.newDirection = this.initial.direction;
                 this.node.active = true;
                 this.movementEnabled = true;
                 this.notifyPlayerStarted();
@@ -380,6 +390,11 @@ cc.Class({
         globalEventSystem.publish('lose');
     },
 
+
     updateAnimation () {
+        if (this.currentDistance > 0) 
+            this.animation.resume()
+        else 
+            this.animation.pause();
     }
 });
