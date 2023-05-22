@@ -10,21 +10,29 @@ let score = Score.getInstance();
 
 const rankHigh = 1000;
 
+const animationClipNames = {
+    move: 'Pacman Move'
+};
+
+
 cc.Class({
     extends: cc.Component,
 
 
     ctor () {
         this.roadNetworkGraph = undefined;
-        this.currentDirection = undefined;
         this.newDirection = undefined;
-        this.currentRoadId = undefined;
-        this.currentDistance = 0;
-        this.initial = {
+        this.initialData = {
             direction: Directions.NONE,
             position: undefined,
             scaleX: undefined,
-            scaleY: undefined
+            scaleY: undefined,
+            animationSpeeds: {}
+        };
+        this.currentData = {
+            roadId: undefined,
+            direction: undefined,
+            distance: 0,            
         };
         this.rankNormal = 0;
         this.superPowerEnergizerTimer = undefined;
@@ -34,8 +42,8 @@ cc.Class({
 
 
     onLoad () {
-        this.currentDirection =
-        this.newDirection = this.initial.direction;
+        this.currentData.direction =
+        this.newDirection = this.initialData.direction;
         this.roadNetworkGraph = globalStorage.scene.roadNetworkGraph;
 
         [
@@ -52,10 +60,10 @@ cc.Class({
         this.rankNormal = this.rankable.getRank();
         this.scorable.lives = globalStorage.scene.playerLivesCountMax;
 
-        this.initial.scaleX = this.node.scaleX;
-        this.initial.scaleY = this.node.scaleY;
-        this.initial.position = this.findInitialPosition();
-        if (this.initial.position) {
+        this.initialData.scaleX = this.node.scaleX;
+        this.initialData.scaleY = this.node.scaleY;
+        this.initialData.position = this.findInitialPosition();
+        if (this.initialData.position) {
             this.movePlayerToInitialPosition();
         }
         else {
@@ -64,9 +72,12 @@ cc.Class({
 
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
-        this.animation = this.getComponent(cc.Animation);
-        this.animation.play();
-
+        this.animation = this.getComponent(cc.Animation);        
+        for (let clip of this.animation.getClips()) {
+            let animationState = this.animation.getAnimationState(clip.name);
+            this.initialData.animationSpeeds[animationState.name] = animationState.speed;
+        }
+        this.animation.play(animationClipNames.move);
     },
 
 
@@ -76,11 +87,11 @@ cc.Class({
 
 
     movePlayerToInitialPosition () {
-        this.currentRoadId = this.initial.position.roadId;
-        this.node.x = this.initial.position.x;
-        this.node.y = this.initial.position.y;
-        this.node.scaleX = this.initial.scaleX;
-        this.node.scaleY = this.initial.scaleY;
+        this.currentData.roadId = this.initialData.position.roadId;
+        this.node.x = this.initialData.position.x;
+        this.node.y = this.initialData.position.y;
+        this.node.scaleX = this.initialData.scaleX;
+        this.node.scaleY = this.initialData.scaleY;
         this.node.angle = 0;
     },
 
@@ -108,8 +119,8 @@ cc.Class({
 
         this.movementEnabled && this.updatePosition(dt);
 
-        this.currentDistance = Math.abs(this.node.x - prevPosition.x) +
-                               Math.abs(this.node.y - prevPosition.y);
+        this.currentData.distance = Math.abs(this.node.x - prevPosition.x) +
+                                    Math.abs(this.node.y - prevPosition.y);
 
         this.updateAnimation();
     },
@@ -120,17 +131,30 @@ cc.Class({
 
         let isDirectionAvalable = function(roadId, direction) {
             let road = this.roadNetworkGraph.roads.refById[roadId];
-            return !(road.isOneWay() && road.direction !== direction);
+
+            if (road.isOneWay())
+                return road.direction === direction;
+
+            switch (direction) {
+                case Directions.EAST:
+                case Directions.WEST:
+                    return road.hasHorizontalOrientation();
+                case Directions.NORTH:
+                case Directions.SOUTH:
+                    return road.hasVerticalOrientation();
+                default:
+                    return true;
+            }
         }.bind(this);
 
-        if ((this.currentDirection === Directions.NONE ||
-            this.newDirection     === Directions.NONE ||
-            Directions.isReverse(this.currentDirection, this.newDirection)) &&
-            isDirectionAvalable(this.currentRoadId, this.newDirection)) {
-            this.currentDirection = this.newDirection;
+        if ((this.currentData.direction === Directions.NONE ||
+             this.newDirection     === Directions.NONE ||
+             Directions.isReverse(this.currentData.direction, this.newDirection)) &&
+            isDirectionAvalable(this.currentData.roadId, this.newDirection)) {
+            this.currentData.direction = this.newDirection;
         }
 
-        if (this.currentDirection == Directions.NONE) {
+        if (this.currentData.direction == Directions.NONE) {
             return;
         }
 
@@ -143,15 +167,15 @@ cc.Class({
         let calculateNextPosition = function () {
             let nextCrossroad = this.roadNetworkGraph.getNextCrossroad(
                 currentPosition,
-                this.currentDirection,
-                this.currentRoadId
+                this.currentData.direction,
+                this.currentData.roadId
             );
             if (nextCrossroad) {
-                let road = this.roadNetworkGraph.roads.refById[this.currentRoadId];
+                let road = this.roadNetworkGraph.roads.refById[this.currentData.roadId];
                 let coord1Name = road.getCoord1Name();
                 let distanceToCrossroad = Math.abs(nextCrossroad[coord1Name] - this.node[coord1Name]);
                 if (distanceToCrossroad > distance) {
-                    switch (this.currentDirection) {
+                    switch (this.currentData.direction) {
                         case Directions.WEST:
                         case Directions.SOUTH:
                             currentPosition[coord1Name] -= distance;
@@ -166,10 +190,10 @@ cc.Class({
                     currentPosition.x = nextCrossroad.x;
                     currentPosition.y = nextCrossroad.y;
                     if (this.roadNetworkGraph.hasRoadTowardsDirection(nextCrossroad, this.newDirection)) {
-                        this.currentDirection = this.newDirection;
+                        this.currentData.direction = this.newDirection;
                     }
-                    if (this.roadNetworkGraph.hasRoadTowardsDirection(nextCrossroad, this.currentDirection)) {
-                        this.currentRoadId = nextCrossroad.getRoadIdTowardsDirection(this.currentDirection);
+                    if (this.roadNetworkGraph.hasRoadTowardsDirection(nextCrossroad, this.currentData.direction)) {
+                        this.currentData.roadId = nextCrossroad.getRoadIdTowardsDirection(this.currentData.direction);
                         calculateNextPosition();
                     }
                 }
@@ -180,8 +204,8 @@ cc.Class({
 
         this.node.x = currentPosition.x;
         this.node.y = currentPosition.y;
-        this.node.angle = Directions.getRotation(this.currentDirection) ?? this.node.angle;
-        this.node.scaleX = Directions.getScale(this.currentDirection) ?? this.node.scaleX;
+        this.node.angle = Directions.getRotation(this.currentData.direction) ?? this.node.angle;
+        this.node.scaleX = Directions.getScale(this.currentData.direction) ?? this.node.scaleX;
     },
 
 
@@ -315,11 +339,11 @@ cc.Class({
 
 
     forceMove (roadId, direction, position) {        
-        this.currentRoadId = roadId;
-        if (this.currentDirection == this.newDirection) {
+        this.currentData.roadId = roadId;
+        if (this.currentData.direction == this.newDirection) {
             this.newDirection = direction;
         }
-        this.currentDirection = direction;
+        this.currentData.direction = direction;
         this.node.x = position.x;
         this.node.y = position.y;
     },
@@ -341,8 +365,8 @@ cc.Class({
             this.scoreChanged();
             this.scheduleOnce(() => {
                 this.movePlayerToInitialPosition();
-                this.currentDirection =
-                this.newDirection = this.initial.direction;
+                this.currentData.direction =
+                this.newDirection = this.initialData.direction;
                 this.node.active = true;
                 this.movementEnabled = true;
                 this.notifyPlayerStarted();
@@ -392,9 +416,13 @@ cc.Class({
 
 
     updateAnimation () {
-        if (this.currentDistance > 0) 
-            this.animation.resume()
-        else 
-            this.animation.pause();
-    }
+        let moveClipState = this.animation.getAnimationState(animationClipNames.move);
+
+        if (this.currentData.distance > 0) {
+            moveClipState.isPaused && this.animation.resume()
+        }
+        else {
+            !moveClipState.isPaused && this.animation.pause();
+        }
+    },
 });

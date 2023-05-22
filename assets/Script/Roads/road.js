@@ -11,6 +11,7 @@ cc.Class({
 
     ctor () {
         this._id = newId++;
+        this.orientation = undefined;
     },
 
     

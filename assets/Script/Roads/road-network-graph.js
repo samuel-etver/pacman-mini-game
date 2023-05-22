@@ -5,21 +5,13 @@ const Directions = require('directions');
 const MAGNETIC_FIELD_DEF = 10;
 const CHECK_GRAPH_CONNECTIVITY = true;
 
+const HORZ_ROAD = 1;
+const VERT_ROAD = 2;
 
 
 class RoadNetworkGraph {
     roads;
     crossroads;
-
-    static get HORZ_ROAD () {
-        return 1;
-    }
-
-
-    static get VERT_ROAD () {
-        return 2;
-    }
-
 
     getNextCrossroad (position, direction, roadId) {
         if (direction === undefined ||
@@ -176,12 +168,12 @@ class Road {
 
 
     hasVerticalOrientation () {
-        return this.orientation == RoadNetworkGraph.VERT_ROAD;
+        return this.orientation == VERT_ROAD;
     }
 
 
     hasHorizontalOrientation () {
-        return this.orientation == RoadNetworkGraph.HORZ_ROAD;
+        return this.orientation == HORZ_ROAD;
     }
 
 
@@ -438,10 +430,10 @@ class GraphBuilder {
 
 
         horzRoads = extent(horzRoads, {
-            orientation: RoadNetworkGraph.HORZ_ROAD
+            orientation: HORZ_ROAD
         });
         vertRoads = extent(vertRoads, {
-            orientation: RoadNetworkGraph.VERT_ROAD
+            orientation: VERT_ROAD
         });
 
         magnetizeCoord2(horzRoads);
@@ -479,7 +471,7 @@ class GraphBuilder {
 
         let iterate = this.iterateList;
 
-        const horzOrientation = RoadNetworkGraph.HORZ_ROAD;
+        const horzOrientation = HORZ_ROAD;
 
         let findAll = function (allRoads) {
             let crossroads = [];
@@ -615,7 +607,7 @@ class GraphBuilder {
                 }
             }
             if (crossroadIds.length) {
-                let compare = road.orientation == RoadNetworkGraph.HORZ_ROAD
+                let compare = road.orientation == HORZ_ROAD
                     ? compareByX
                     : compareByY;
                 road.crossroadIds = crossroadIds.sort(compare);
