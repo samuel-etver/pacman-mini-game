@@ -50,8 +50,9 @@ cc.Class({
 
     onLoad () {
         let sceneData = {
-            playerImmortal: globalConfig.playerImmortal,
-            speed: globalConfig.speed,
+            get playerImmortal () { return globalConfig.playerImmortal; },
+            get speedLevel () { return globalConfig.speedLevel; },
+            get speed () { return globalConfig.speed; } ,
             enemyToPlayerSpeedK: globalConfig.enemyToPlayerSpeedK,
             delayAfterEnemyDie: globalConfig.delayAfterEnemyDie,
             delayAfterPlayerDie: globalConfig.delayAfterPlayerDie,

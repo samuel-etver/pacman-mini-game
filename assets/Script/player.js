@@ -75,8 +75,9 @@ cc.Class({
         this.animation = this.getComponent(cc.Animation);        
         for (let clip of this.animation.getClips()) {
             let animationState = this.animation.getAnimationState(clip.name);
-            this.initialData.animationSpeeds[animationState.name] = animationState.speed;
+            this.initialData.animationSpeeds[clip.name] = animationState.speed;
         }
+        this.updateAnimationSpeed();
         this.animation.play(animationClipNames.move);
     },
 
@@ -127,7 +128,8 @@ cc.Class({
 
 
     updatePosition (dt) {
-        let distance = dt * this.getSpeed();
+        let speed = globalStorage.scene.speed;
+        let distance = dt * speed;
 
         let isDirectionAvalable = function(roadId, direction) {
             let road = this.roadNetworkGraph.roads.refById[roadId];
@@ -333,11 +335,6 @@ cc.Class({
     },
 
 
-    getSpeed () {
-        return globalStorage.scene.speed;
-    },
-
-
     forceMove (roadId, direction, position) {        
         this.currentData.roadId = roadId;
         if (this.currentData.direction == this.newDirection) {
@@ -425,4 +422,18 @@ cc.Class({
             !moveClipState.isPaused && this.animation.pause();
         }
     },
+
+
+    updateAnimationSpeed () {
+        let animationSpeedMax = 1.1;
+        let animationSpeedMin = 0.8;
+        let animationSpeedK = animationSpeedMin + 
+          (animationSpeedMax - animationSpeedMin) * globalStorage.scene.speedLevel;
+        for (let clip of this.animation.getClips()) {
+            let animationState = this.animation.getAnimationState(clip.name);
+            animationState.speed = animationSpeedK *
+              this.initialData.animationSpeeds[clip.name];
+        }
+
+    }
 });
