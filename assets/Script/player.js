@@ -26,8 +26,7 @@ cc.Class({
             direction: Directions.NONE,
             position: undefined,
             scaleX: undefined,
-            scaleY: undefined,
-            animationSpeeds: {}
+            scaleY: undefined
         };
         this.currentData = {
             roadId: undefined,
@@ -73,11 +72,6 @@ cc.Class({
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
         this.animation = this.getComponent(cc.Animation);        
-        for (let clip of this.animation.getClips()) {
-            let animationState = this.animation.getAnimationState(clip.name);
-            this.initialData.animationSpeeds[clip.name] = animationState.speed;
-        }
-        this.updateAnimationSpeed();
         this.animation.play(animationClipNames.move);
     },
 
@@ -422,18 +416,4 @@ cc.Class({
             !moveClipState.isPaused && this.animation.pause();
         }
     },
-
-
-    updateAnimationSpeed () {
-        let animationSpeedMax = 1.1;
-        let animationSpeedMin = 0.8;
-        let animationSpeedK = animationSpeedMin + 
-          (animationSpeedMax - animationSpeedMin) * globalStorage.scene.speedLevel;
-        for (let clip of this.animation.getClips()) {
-            let animationState = this.animation.getAnimationState(clip.name);
-            animationState.speed = animationSpeedK *
-              this.initialData.animationSpeeds[clip.name];
-        }
-
-    }
 });

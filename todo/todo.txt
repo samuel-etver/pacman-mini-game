@@ -1,0 +1,7 @@
+-create pacman's death animation
+-recreate ghost move animation
+-recreate scene background
+-create labyrinth
+-redesign buttons
+-redesign stats
+-create main menu picture
