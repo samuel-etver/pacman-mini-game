@@ -1,4 +1,4 @@
-<tnz framecount="14" version="71.1">
+<tnz framecount="15" version="71.1">
   <generator>
     "Tahoma2D 1.3.1"
   </generator>
@@ -406,7 +406,7 @@
     </levels>
     <folder name="Cast" type="default">
       <levels>
-        <level id='1'/><level id='3'/><level id='2'/><level id='4'/><level id='6'/><level id='5'/>
+        <level id='1'/><level id='3'/><level id='5'/><level id='6'/><level id='2'/><level id='4'/>
       </levels>
       </folder>
     <folder name="Audio">
@@ -459,7 +459,7 @@
         </status>
         <cells>
           <cell>
-            10 4 <level id='6'/>0001 1 
+            10 5 <level id='6'/>0001 1 
           </cell>
           </cells>
         <fx>
@@ -470,7 +470,7 @@
             <ports>
               </ports>
             <dagNodePos>
-              25005 25005 
+              25006 24986 
             </dagNodePos>
             <numberId>
               0 
@@ -629,7 +629,7 @@
         <parent handle="B" id="Table" parentHandle="B">
           </parent>
         <name>
-          explosion 
+          E 
         </name>
         <isOpened>
           0 
@@ -656,7 +656,7 @@
           </default>
           </sc>
         <nodePos>
-          24620 25450 
+          1.234e+09 5.678e+09 
         </nodePos>
         </pegbar>
       <grid_dimension>
@@ -666,171 +666,137 @@
     <fxnodes>
       <internal>
         <fxnode>
-          <STD_erodeDilateFx id='11'>
+          <STD_linearWaveFx id='11'>
             
             <params>
-              <type>
-                1 
-              </type>
-              <radius>
+              <intensity>
                 <default>
-                  2.22222 
+                  20 
                 </default>
-                </radius>
+                <keyframes>
+                  <L>
+                    0 0 
+                  </L>
+                  <L>
+                    <prev>
+                      25 
+                    </prev>
+                    15 25 
+                  </L>
+                  </keyframes>
+                </intensity>
+              <sensitivity>
+                <default>
+                  5 
+                </default>
+                <keyframes>
+                  <L>
+                    0 6 
+                  </L>
+                  <L>
+                    <prev>
+                      2 
+                    </prev>
+                    15 2 
+                  </L>
+                  </keyframes>
+                </sensitivity>
+              <period>
+                <default>
+                  100 
+                </default>
+                </period>
+              <count>
+                <default>
+                  20 
+                </default>
+                </count>
+              <cycle>
+                <default>
+                  0 
+                </default>
+                </cycle>
+              <amplitude>
+                <default>
+                  44.4444 
+                </default>
+                <keyframes>
+                  <L>
+                    0 0.444444 
+                  </L>
+                  <L>
+                    <prev>
+                      53.3333 
+                    </prev>
+                    15 53.3333 
+                  </L>
+                  </keyframes>
+                </amplitude>
+              <frequency>
+                <default>
+                  200 
+                </default>
+                </frequency>
+              <phase>
+                <default>
+                  0 
+                </default>
+                </phase>
+              <angle>
+                <default>
+                  0 
+                </default>
+                <keyframes>
+                  <L>
+                    0 0 
+                  </L>
+                  <L>
+                    <prev>
+                      90 
+                    </prev>
+                    15 90 
+                  </L>
+                  </keyframes>
+                </angle>
+              <sharpen>
+                0 0 
+              </sharpen>
               </params>
             <ports>
               <Source>
-                <STD_linearWaveFx id='12'>
-                  
-                  <params>
-                    <intensity>
-                      <default>
-                        20 
-                      </default>
-                      <keyframes>
-                        <L>
-                          0 0 
-                        </L>
-                        <L>
-                          <prev>
-                            25 
-                          </prev>
-                          15 25 
-                        </L>
-                        </keyframes>
-                      </intensity>
-                    <sensitivity>
-                      <default>
-                        5 
-                      </default>
-                      <keyframes>
-                        <L>
-                          0 6 
-                        </L>
-                        <L>
-                          <prev>
-                            2 
-                          </prev>
-                          15 2 
-                        </L>
-                        </keyframes>
-                      </sensitivity>
-                    <period>
-                      <default>
-                        100 
-                      </default>
-                      </period>
-                    <count>
-                      <default>
-                        20 
-                      </default>
-                      </count>
-                    <cycle>
-                      <default>
-                        0 
-                      </default>
-                      </cycle>
-                    <amplitude>
-                      <default>
-                        44.4444 
-                      </default>
-                      <keyframes>
-                        <L>
-                          0 0.444444 
-                        </L>
-                        <L>
-                          <prev>
-                            53.3333 
-                          </prev>
-                          15 53.3333 
-                        </L>
-                        </keyframes>
-                      </amplitude>
-                    <frequency>
-                      <default>
-                        200 
-                      </default>
-                      </frequency>
-                    <phase>
-                      <default>
-                        0 
-                      </default>
-                      </phase>
-                    <angle>
-                      <default>
-                        0 
-                      </default>
-                      <keyframes>
-                        <L>
-                          0 0 
-                        </L>
-                        <L>
-                          <prev>
-                            90 
-                          </prev>
-                          15 90 
-                        </L>
-                        </keyframes>
-                      </angle>
-                    <sharpen>
-                      0 0 
-                    </sharpen>
-                    </params>
-                  <ports>
-                    <Source>
-                      <Toonz_columnFx id='8'/>
-                    </Source>
-                    </ports>
-                  <dagNodePos>
-                    25029 24690 
-                  </dagNodePos>
-                  <numberId>
-                    2 
-                  </numberId>
-                  <name>
-                    LinearWave02 
-                  </name>
-                  <fxId>
-                    LinearWave02 
-                  </fxId>
-                  <opened>
-                    0 
-                  </opened>
-                  
-                </STD_linearWaveFx>
-                
+                <Toonz_columnFx id='8'/>
               </Source>
               </ports>
             <dagNodePos>
-              25116 24769 
+              25029 24690 
             </dagNodePos>
             <numberId>
-              1 
+              2 
             </numberId>
             <name>
-              ErodeDilate01 
+              LinearWave02 
             </name>
             <fxId>
-              ErodeDilate01 
+              LinearWave02 
             </fxId>
             <opened>
               0 
             </opened>
             
-          </STD_erodeDilateFx>
+          </STD_linearWaveFx>
           
         </fxnode>
         <fxnode>
-          <overFx id='13'>
+          <overFx id='12'>
             
             <params>
               </params>
             <ports>
               <Source1>
-                <STD_linearWaveFx id='12'/>
+                <STD_linearWaveFx id='11'/>
               </Source1>
               <Source2>
-                <STD_blurFx id='14'>
+                <STD_blurFx id='13'>
                   
                   <params>
                     <value>
@@ -844,7 +810,41 @@
                     </params>
                   <ports>
                     <Source>
-                      <STD_erodeDilateFx id='11'/>
+                      <STD_erodeDilateFx id='14'>
+                        
+                        <params>
+                          <type>
+                            1 
+                          </type>
+                          <radius>
+                            <default>
+                              2.22222 
+                            </default>
+                            </radius>
+                          </params>
+                        <ports>
+                          <Source>
+                            <STD_linearWaveFx id='11'/>
+                          </Source>
+                          </ports>
+                        <dagNodePos>
+                          25116 24769 
+                        </dagNodePos>
+                        <numberId>
+                          1 
+                        </numberId>
+                        <name>
+                          ErodeDilate01 
+                        </name>
+                        <fxId>
+                          ErodeDilate01 
+                        </fxId>
+                        <opened>
+                          0 
+                        </opened>
+                        
+                      </STD_erodeDilateFx>
+                      
                     </Source>
                     </ports>
                   <dagNodePos>
@@ -870,7 +870,7 @@
                 </Source3>
               </ports>
             <dagNodePos>
-              25373 24676 
+              25335 24672 
             </dagNodePos>
             <numberId>
               1 
@@ -889,13 +889,84 @@
           
         </fxnode>
         <fxnode>
-          <STD_blurFx id='14'/>
+          <overFx id='15'>
+            
+            <params>
+              </params>
+            <ports>
+              <Source1>
+                <STD_blurFx id='16'>
+                  
+                  <params>
+                    <value>
+                      <default>
+                        4.44444 
+                      </default>
+                      </value>
+                    <useSSE>
+                      1 1 
+                    </useSSE>
+                    </params>
+                  <ports>
+                    <Source>
+                      <Toonz_columnFx id='10'/>
+                    </Source>
+                    </ports>
+                  <dagNodePos>
+                    25149.4 25070.1 
+                  </dagNodePos>
+                  <numberId>
+                    2 
+                  </numberId>
+                  <name>
+                    Blur02 
+                  </name>
+                  <fxId>
+                    Blur02 
+                  </fxId>
+                  <opened>
+                    0 
+                  </opened>
+                  
+                </STD_blurFx>
+                
+              </Source1>
+              <Source2>
+                <Toonz_columnFx id='10'/>
+              </Source2>
+              <Source3>
+                </Source3>
+              </ports>
+            <dagNodePos>
+              25301.4 24973.1 
+            </dagNodePos>
+            <numberId>
+              2 
+            </numberId>
+            <name>
+              OverFx 
+            </name>
+            <fxId>
+              Over02 
+            </fxId>
+            <opened>
+              0 
+            </opened>
+            
+          </overFx>
+          
         </fxnode>
         <fxnode>
-          <STD_linearWaveFx id='12'/>
+          <STD_erodeDilateFx id='14'/>
         </fxnode>
         <fxnode>
-          <STD_fadeFx id='15'>
+          <STD_blurFx id='16'/>
+        </fxnode>
+        <fxnode>
+          <STD_blurFx id='13'/>
+        </fxnode>
+        <fxnode>
+          <STD_fadeFx id='17'>
             
             <params>
               <value>
@@ -923,11 +994,11 @@
               </params>
             <ports>
               <Source>
-                <overFx id='13'/>
+                <overFx id='12'/>
               </Source>
               </ports>
             <dagNodePos>
-              25512 24672 
+              25474 24669 
             </dagNodePos>
             <numberId>
               1 
@@ -945,24 +1016,58 @@
           </STD_fadeFx>
           
         </fxnode>
+        <fxnode>
+          <STD_fadeFx id='18'>
+            
+            <params>
+              <value>
+                <default>
+                  0 
+                </default>
+                </value>
+              </params>
+            <ports>
+              <Source>
+                <overFx id='15'/>
+              </Source>
+              </ports>
+            <dagNodePos>
+              25461.4 24961.1 
+            </dagNodePos>
+            <numberId>
+              2 
+            </numberId>
+            <name>
+              Transparency02 
+            </name>
+            <fxId>
+              Transparency02 
+            </fxId>
+            <opened>
+              0 
+            </opened>
+            
+          </STD_fadeFx>
+          
+        </fxnode>
         </internal>
       <terminal>
         <fxnode>
-          <STD_fadeFx id='15'/>
+          <STD_fadeFx id='17'/>
         </fxnode>
         <fxnode>
-          <Toonz_columnFx id='10'/>
+          <STD_fadeFx id='18'/>
         </fxnode>
         </terminal>
       <xsheet>
-        <Toonz_xsheetFx id='16'>
+        <Toonz_xsheetFx id='19'>
           
           <params>
             </params>
           <ports>
             </ports>
           <dagNodePos>
-            25541 25041 
+            25557 24957 
           </dagNodePos>
           <numberId>
             0 
@@ -981,13 +1086,13 @@
         
       </xsheet>
       <output>
-        <Toonz_outputFx id='17'>
+        <Toonz_outputFx id='20'>
           
           <params>
             </params>
           <ports>
             <source>
-              <Toonz_xsheetFx id='16'/>
+              <Toonz_xsheetFx id='19'/>
             </source>
             </ports>
           <dagNodePos>
@@ -1020,5 +1125,7 @@
     "| #2   08 июн 23   15:48   U03282      smn             |"
     "| #3   09 июн 23   22:15   DESKTOP-DB1FSam             |"
     "| #4   11 июн 23   23:22   DESKTOP-DB1FSam             |"
+    "| #5   12 июн 23   19:07   DESKTOP-DB1FSam             |"
+    "| #6   12 июн 23   21:52   DESKTOP-DB1FSam             |"
   </history>
   </tnz>
