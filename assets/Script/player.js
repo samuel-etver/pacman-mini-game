@@ -11,7 +11,8 @@ let score = Score.getInstance();
 const rankHigh = 1000;
 
 const animationClipNames = {
-    move: 'Pacman Move'
+    move: 'Pacman Move',
+    die: 'Pacman Death'
 };
 
 
@@ -32,9 +33,10 @@ cc.Class({
             roadId: undefined,
             direction: undefined,
             distance: 0,            
-        };
+        };        
         this.rankNormal = 0;
         this.superPowerEnergizerTimer = undefined;
+        this.alive = true;
         this.movementEnabled = false;
         this.animation = undefined;
     },
@@ -349,6 +351,7 @@ cc.Class({
             return;
         }
 
+        this.alive = false;
         this.notifyPlayerStopped();
         this.node.active = false;
         if (this.scorable.lives) {
@@ -360,6 +363,7 @@ cc.Class({
                 this.newDirection = this.initialData.direction;
                 this.node.active = true;
                 this.movementEnabled = true;
+                this.alive = true;
                 this.notifyPlayerStarted();
             }, globalStorage.scene.delayAfterPlayerDie);
         }
@@ -408,6 +412,15 @@ cc.Class({
 
     updateAnimation () {
         let moveClipState = this.animation.getAnimationState(animationClipNames.move);
+        let dieClipState = this.animation.getAnimationState(animationClipNames.die);
+
+        if (this.alive) {
+
+        }
+        else {
+            
+        }
+        
 
         if (this.currentData.distance > 0) {
             moveClipState.isPaused && this.animation.resume()
