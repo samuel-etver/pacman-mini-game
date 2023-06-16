@@ -74,7 +74,7 @@ cc.Class({
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
         this.animation = this.getComponent(cc.Animation);        
-        this.animation.play(animationClipNames.move);
+//        this.animation.play(animationClipNames.move);
     },
 
 
@@ -114,7 +114,7 @@ cc.Class({
     update (dt) {
         let prevPosition = this.node.position;
 
-        this.movementEnabled && this.updatePosition(dt);
+        this.alive && this.movementEnabled && this.updatePosition(dt);
 
         this.currentData.distance = Math.abs(this.node.x - prevPosition.x) +
                                     Math.abs(this.node.y - prevPosition.y);
@@ -353,7 +353,7 @@ cc.Class({
 
         this.alive = false;
         this.notifyPlayerStopped();
-        this.node.active = false;
+        //this.node.active = false;
         if (this.scorable.lives) {
             this.scorable.decLives();
             this.scoreChanged();
@@ -415,18 +415,21 @@ cc.Class({
         let dieClipState = this.animation.getAnimationState(animationClipNames.die);
 
         if (this.alive) {
+            if (!moveClipState.isPlaying) 
+                this.animation.play(animationClipNames.move);        
+            if (dieClipState.isPlaying)    
+                this.animation.stop(animationClipNames.die);              
 
+            if (this.currentData.distance > 0) 
+                moveClipState.isPaused && this.animation.resume(animationClipNames.move);
+            else 
+                !moveClipState.isPaused && this.animation.pause(animationClipNames.move);
         }
         else {
-            
-        }
-        
-
-        if (this.currentData.distance > 0) {
-            moveClipState.isPaused && this.animation.resume()
-        }
-        else {
-            !moveClipState.isPaused && this.animation.pause();
+            if (moveClipState.isPlaying)
+                this.animation.stop(animationClipNames.move);
+            if (!dieClipState.isPlaying)    
+                this.animation.play(animationClipNames.die);
         }
     },
 });
