@@ -11,8 +11,14 @@ let score = Score.getInstance();
 const rankHigh = 1000;
 
 const animationClipNames = {
-    move: 'Pacman Move',
-    die: 'Pacman Death'
+    MOVE: 'Pacman Move',
+    DIE: 'Pacman Death'
+};
+
+const PlayerStatus = {
+    ALIVE: 1,
+    DYING: 2,
+    DEAD:  3
 };
 
 
@@ -36,7 +42,7 @@ cc.Class({
         };        
         this.rankNormal = 0;
         this.superPowerEnergizerTimer = undefined;
-        this.alive = true;
+        this.playerStatus = PlayerStatus.ALIVE;
         this.movementEnabled = false;
         this.animation = undefined;
     },
@@ -74,7 +80,7 @@ cc.Class({
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
         this.animation = this.getComponent(cc.Animation);        
-//        this.animation.play(animationClipNames.move);
+//        this.animation.play(animationClipNames.MOVE);
     },
 
 
@@ -96,12 +102,14 @@ cc.Class({
     onEnable () {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this); 
         globalEventSystem.subscribe('control-panel-button-down', this.onControlPanelButtonDown);       
+        this.animation.on('lastframe', this.onAnimationLastFrame, this);
     },
 
 
     onDisable () {
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         globalEventSystem.unsubscribe('control-panel-button-down', this.onControlPanelButtonDown);
+        this.animation.off('lastframe', this.onAnimationLastFrame, this);
     },
 
 
@@ -114,7 +122,7 @@ cc.Class({
     update (dt) {
         let prevPosition = this.node.position;
 
-        this.alive && this.movementEnabled && this.updatePosition(dt);
+        (this.playerStatus === PlayerStatus.ALIVE) && this.movementEnabled && this.updatePosition(dt);
 
         this.currentData.distance = Math.abs(this.node.x - prevPosition.x) +
                                     Math.abs(this.node.y - prevPosition.y);
@@ -346,14 +354,13 @@ cc.Class({
     },
 
 
-    die (value) {
+    die () {
         if (this.isImmortal()) {
             return;
         }
 
-        this.alive = false;
+        this.playerStatus = PlayerStatus.DYING;
         this.notifyPlayerStopped();
-        //this.node.active = false;
         if (this.scorable.lives) {
             this.scorable.decLives();
             this.scoreChanged();
@@ -363,7 +370,7 @@ cc.Class({
                 this.newDirection = this.initialData.direction;
                 this.node.active = true;
                 this.movementEnabled = true;
-                this.alive = true;
+                this.playerStatus = PlayerStatus.ALIVE;
                 this.notifyPlayerStarted();
             }, globalStorage.scene.delayAfterPlayerDie);
         }
@@ -411,25 +418,35 @@ cc.Class({
 
 
     updateAnimation () {
-        let moveClipState = this.animation.getAnimationState(animationClipNames.move);
-        let dieClipState = this.animation.getAnimationState(animationClipNames.die);
+        switch(this.playerStatus) {
+            case PlayerStatus.ALIVE:
+                let moveClipState = this.animation.getAnimationState(animationClipNames.MOVE);
 
-        if (this.alive) {
-            if (!moveClipState.isPlaying) 
-                this.animation.play(animationClipNames.move);        
-            if (dieClipState.isPlaying)    
-                this.animation.stop(animationClipNames.die);              
+                if (!moveClipState.isPlaying) {
+                    this.animation.play(animationClipNames.MOVE);        
+                }
+                else {
+                    if (this.currentData.distance > 0) 
+                        moveClipState.isPaused && this.animation.resume(animationClipNames.MOVE);
+                    else 
+                        !moveClipState.isPaused && this.animation.pause(animationClipNames.MOVE);
+                }
+                break;
 
-            if (this.currentData.distance > 0) 
-                moveClipState.isPaused && this.animation.resume(animationClipNames.move);
-            else 
-                !moveClipState.isPaused && this.animation.pause(animationClipNames.move);
-        }
-        else {
-            if (moveClipState.isPlaying)
-                this.animation.stop(animationClipNames.move);
-            if (!dieClipState.isPlaying)    
-                this.animation.play(animationClipNames.die);
+            case PlayerStatus.DYING:
+                let dieClipState = this.animation.getAnimationState(animationClipNames.DIE);
+
+                if (!dieClipState.isPlaying)    
+                    this.animation.play(animationClipNames.DIE);
+                break;
         }
     },
+
+
+    onAnimationLastFrame (animationEvent, animationState) {
+        switch(animationState.name) {
+            case animationClipNames.DIE:
+                this.playerStatus = PlayerStatus.DEAD;
+        }
+    }
 });
