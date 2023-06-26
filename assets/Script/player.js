@@ -80,7 +80,6 @@ cc.Class({
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
        
         this.animation = this.getComponent(cc.Animation);        
-//        this.animation.play(animationClipNames.MOVE);
     },
 
 
@@ -96,6 +95,7 @@ cc.Class({
         this.node.scaleX = this.initialData.scaleX;
         this.node.scaleY = this.initialData.scaleY;
         this.node.angle = 0;
+        this.node.opacity = 255;
     },
 
 
@@ -364,7 +364,7 @@ cc.Class({
         if (this.scorable.lives) {
             this.scorable.decLives();
             this.scoreChanged();
-            this.scheduleOnce(() => {
+            this.scheduleOnce(() => {                
                 this.movePlayerToInitialPosition();
                 this.currentData.direction =
                 this.newDirection = this.initialData.direction;
@@ -419,7 +419,7 @@ cc.Class({
 
     updateAnimation () {
         switch(this.playerStatus) {
-            case PlayerStatus.ALIVE:
+            case PlayerStatus.ALIVE: {
                 let moveClipState = this.animation.getAnimationState(animationClipNames.MOVE);
 
                 if (!moveClipState.isPlaying) {
@@ -432,13 +432,15 @@ cc.Class({
                         !moveClipState.isPaused && this.animation.pause(animationClipNames.MOVE);
                 }
                 break;
+            }
 
-            case PlayerStatus.DYING:
+            case PlayerStatus.DYING: {
                 let dieClipState = this.animation.getAnimationState(animationClipNames.DIE);
 
                 if (!dieClipState.isPlaying)    
                     this.animation.play(animationClipNames.DIE);
                 break;
+            }
         }
     },
 
@@ -447,6 +449,8 @@ cc.Class({
         switch(animationState.name) {
             case animationClipNames.DIE:
                 this.playerStatus = PlayerStatus.DEAD;
+                this.animation.stop(animationClipNames.DIE);
+                this.node.opacity = 0;                
         }
     }
 });
