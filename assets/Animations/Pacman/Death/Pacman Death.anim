@@ -247,6 +247,20 @@
           }
         ]
       }
+    },
+    "props": {
+      "width": [
+        {
+          "frame": 0,
+          "value": 56
+        }
+      ],
+      "height": [
+        {
+          "frame": 0,
+          "value": 56
+        }
+      ]
     }
   },
   "events": []
