@@ -377,11 +377,19 @@
         </path>
         
       </level>
+      <level id='2'>
+        "pacman (move)"
+        <info dpix="120.000000" dpiy="120.000000"/>
+        <path>
+          "+extras\\pacman (move)_.png"
+        </path>
+        
+      </level>
       
     </levels>
     <folder name="Cast" type="default">
       <levels>
-        <level id='1'/>
+        <level id='1'/><level id='2'/>
       </levels>
       </folder>
     <folder name="Audio">
@@ -389,28 +397,28 @@
     </levelSet>
   <xsheet>
     <columns>
-      <levelColumn id='2'>
+      <levelColumn id='3'>
         
         <status>
           0 
         </status>
         <cells>
           <cell>
-            0 10 <level id='1'/>0001 1 
+            0 10 <level id='2'/>0001 1 
           </cell>
           <cell>
-            10 8 <level id='1'/>0009 -1 
+            10 8 <level id='2'/>0009 -1 
           </cell>
           </cells>
         <fx>
-          <Toonz_columnFx id='3'>
+          <Toonz_columnFx id='4'>
             
             <params>
               </params>
             <ports>
               </ports>
             <dagNodePos>
-              25005 25005 
+              24926 24983 
             </dagNodePos>
             <numberId>
               0 
@@ -513,7 +521,7 @@
         <parent handle="B" id="Table" parentHandle="B">
           </parent>
         <name>
-          A 
+          "pacman (move)"
         </name>
         <isOpened>
           0 
@@ -548,20 +556,130 @@
       </grid_dimension>
       </pegbars>
     <fxnodes>
+      <internal>
+        <fxnode>
+          <STD_blurFx id='5'>
+            
+            <params>
+              <value>
+                <default>
+                  20 
+                </default>
+                </value>
+              <useSSE>
+                1 1 
+              </useSSE>
+              </params>
+            <ports>
+              <Source>
+                <STD_erodeDilateFx id='6'>
+                  
+                  <params>
+                    <type>
+                      0 
+                    </type>
+                    <radius>
+                      <default>
+                        2.22222 
+                      </default>
+                      </radius>
+                    </params>
+                  <ports>
+                    <Source>
+                      <Toonz_columnFx id='4'/>
+                    </Source>
+                    </ports>
+                  <dagNodePos>
+                    25068 25070 
+                  </dagNodePos>
+                  <numberId>
+                    1 
+                  </numberId>
+                  <name>
+                    ErodeDilate01 
+                  </name>
+                  <fxId>
+                    ErodeDilate01 
+                  </fxId>
+                  <opened>
+                    0 
+                  </opened>
+                  
+                </STD_erodeDilateFx>
+                
+              </Source>
+              </ports>
+            <dagNodePos>
+              25221 25120 
+            </dagNodePos>
+            <numberId>
+              1 
+            </numberId>
+            <name>
+              Blur01 
+            </name>
+            <fxId>
+              Blur01 
+            </fxId>
+            <opened>
+              0 
+            </opened>
+            
+          </STD_blurFx>
+          
+        </fxnode>
+        <fxnode>
+          <STD_erodeDilateFx id='6'/>
+        </fxnode>
+        <fxnode>
+          <overFx id='7'>
+            
+            <params>
+              </params>
+            <ports>
+              <Source1>
+                <Toonz_columnFx id='4'/>
+              </Source1>
+              <Source2>
+                <STD_blurFx id='5'/>
+              </Source2>
+              <Source3>
+                </Source3>
+              </ports>
+            <dagNodePos>
+              25341 25057 
+            </dagNodePos>
+            <numberId>
+              1 
+            </numberId>
+            <name>
+              OverFx 
+            </name>
+            <fxId>
+              Over01 
+            </fxId>
+            <opened>
+              0 
+            </opened>
+            
+          </overFx>
+          
+        </fxnode>
+        </internal>
       <terminal>
         <fxnode>
-          <Toonz_columnFx id='3'/>
+          <overFx id='7'/>
         </fxnode>
         </terminal>
       <xsheet>
-        <Toonz_xsheetFx id='4'>
+        <Toonz_xsheetFx id='8'>
           
           <params>
             </params>
           <ports>
             </ports>
           <dagNodePos>
-            25120 25000 
+            25446 25023 
           </dagNodePos>
           <numberId>
             0 
@@ -580,17 +698,17 @@
         
       </xsheet>
       <output>
-        <Toonz_outputFx id='5'>
+        <Toonz_outputFx id='9'>
           
           <params>
             </params>
           <ports>
             <source>
-              <Toonz_xsheetFx id='4'/>
+              <Toonz_xsheetFx id='8'/>
             </source>
             </ports>
           <dagNodePos>
-            25235 24995 
+            25496 24931 
           </dagNodePos>
           <numberId>
             0 
@@ -621,5 +739,8 @@
     "| #4   15 апр 23   17:47   DESKTOP-DB1FSam             |"
     "| #5   15 апр 23   18:12   DESKTOP-DB1FSam             |"
     "| #6   25 апр 23   22:44   DESKTOP-DB1FSam             |"
+    "| #7   03 июл 23   21:44   DESKTOP-DB1FSam             |"
+    "| #8   03 июл 23   22:03   DESKTOP-DB1FSam             |"
+    "| #9   03 июл 23   22:08   DESKTOP-DB1FSam             |"
   </history>
   </tnz>
