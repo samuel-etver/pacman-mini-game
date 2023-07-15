@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="pipes.svg"
+   inkscape:export-filename="pipes.png"
+   inkscape:export-xdpi="254"
+   inkscape:export-ydpi="254"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.6819304"
+     inkscape:cx="259.52322"
+     inkscape:cy="222.66082"
+     inkscape:window-width="1469"
+     inkscape:window-height="942"
+     inkscape:window-x="257"
+     inkscape:window-y="54"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0;fill:#ff8300;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+       id="rect234"
+       width="60"
+       height="60"
+       x="20.022207"
+       y="16.462612"
+       rx="0"
+       ry="0" />
+    <g
+       id="g4284"
+       style="display:none">
+      <rect
+         style="opacity:0.278481;fill:#8bff00;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1681"
+         width="20"
+         height="20"
+         x="20.022207"
+         y="16.462612" />
+      <rect
+         style="opacity:0.278481;fill:#8bff00;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1735"
+         width="20"
+         height="20"
+         x="60.022209"
+         y="16.462612" />
+      <rect
+         style="opacity:0.278481;fill:#b300ff;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1737"
+         width="20"
+         height="20"
+         x="40.022209"
+         y="16.462612" />
+      <rect
+         style="opacity:0.278481;fill:#b300ff;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1739"
+         width="20"
+         height="20"
+         x="20.022207"
+         y="36.462612" />
+      <rect
+         style="opacity:0.278481;fill:#8bff00;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1741"
+         width="20"
+         height="20"
+         x="40.022209"
+         y="36.462612" />
+      <rect
+         style="opacity:0.278481;fill:#b300ff;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1743"
+         width="20"
+         height="20"
+         x="60.022209"
+         y="36.462612" />
+      <rect
+         style="opacity:0.278481;fill:#8bff00;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1745"
+         width="20"
+         height="20"
+         x="20.022207"
+         y="56.462612" />
+      <rect
+         style="opacity:0.278481;fill:#b300ff;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1747"
+         width="20"
+         height="20"
+         x="40.022209"
+         y="56.462612" />
+      <rect
+         style="opacity:0.278481;fill:#8bff00;fill-opacity:1;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575"
+         id="rect1749"
+         width="20"
+         height="20"
+         x="60.022209"
+         y="56.462616" />
+    </g>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:5.21575;stroke-opacity:1"
+       id="rect1817"
+       width="40"
+       height="40.000004"
+       x="30.022209"
+       y="26.462612"
+       ry="6.3427043"
+       rx="6.3427043"
+       inkscape:export-filename="pipes.png"
+       inkscape:export-xdpi="254"
+       inkscape:export-ydpi="254" />
+  </g>
+</svg>
