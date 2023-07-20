@@ -1,0 +1,41 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "scene1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "layer1-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "layer2-tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "scene1.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1290.9090909090908,
+                "y": 215.15151515151513
+            }
+        }
+    },
+    "last.imagePath": "D:/myprojects/git/pacman-mini-game/arts/Maps",
+    "map.height": 24,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 48,
+    "openFiles": [
+        "scene1.tmx",
+        "layer2-tiles.tsx"
+    ],
+    "project": "scene1.tiled-project",
+    "recentFiles": [
+        "layer2-tiles.tsx",
+        "scene1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
