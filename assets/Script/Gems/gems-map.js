@@ -43,9 +43,6 @@ class GemsMapBuilder {
                     ? (roadLength / gapsCount)
                     : 0;
                 let gemsCount = gapsCount + 1;
-                if(road.attr.tag === 10)     {
-                  cc.log("FOUND!=" + roadLength + " " + gapSize + " " + gemsCount) 
-                }
                 let [coord1,] = road.getRange();
                 let coord2    = road.getCoord2();            
                 for (let i = 0; i < gemsCount; i++) {

@@ -33,7 +33,6 @@
     ]
   ],
   "excluded-modules": [
-    "Spine Skeleton",
     "3D",
     "3D Primitive",
     "3D Physics/cannon.js",
@@ -59,7 +58,7 @@
     "width": 640,
     "height": 1136
   },
-  "last-module-event-record-time": 1657548835094,
+  "last-module-event-record-time": 1689967006485,
   "preview-port": 7456,
   "clear-simulator-cache": true,
   "facebook": {
