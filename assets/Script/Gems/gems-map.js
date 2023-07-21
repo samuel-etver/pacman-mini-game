@@ -1,4 +1,4 @@
-const GEMS_GAP_DEF = 20.0;
+const GEMS_GAP_DEF = 27.0;
 
 
 class GemsMap {
@@ -17,7 +17,7 @@ class GemsMapBuilder {
     static build (roadNetworkGraph, options) {
         const gemsGap = options.gemsGap ?? GEMS_GAP_DEF;
         
-        let positions = this.calculateAllPositions( roadNetworkGraph.roads, options);   
+        let positions = this.calculateAllPositions(roadNetworkGraph.roads, options);   
         positions = this.removeNearest(positions, options);     
 
         return positions;
@@ -43,6 +43,9 @@ class GemsMapBuilder {
                     ? (roadLength / gapsCount)
                     : 0;
                 let gemsCount = gapsCount + 1;
+                if(road.attr.tag === 10)     {
+                  cc.log("FOUND!=" + roadLength + " " + gapSize + " " + gemsCount) 
+                }
                 let [coord1,] = road.getRange();
                 let coord2    = road.getCoord2();            
                 for (let i = 0; i < gemsCount; i++) {
@@ -57,7 +60,7 @@ class GemsMapBuilder {
 
     static removeNearest (positions, options) {
         let gemsGap = options.gemsGap ?? GEMS_GAP_DEF;
-        let minDistance = gemsGap / 1.5;
+        let minDistance = gemsGap / 1.1;
 
         let newPositions = [];        
 

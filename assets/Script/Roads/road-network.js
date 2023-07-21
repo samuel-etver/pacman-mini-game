@@ -40,6 +40,7 @@ cc.Class({
                     direction: roadComponent.direction,
                     attr: {
                         gemsEnabled: roadComponent.gemsEnabled,
+                        tag: roadComponent.tag
                     }
                 };
             });

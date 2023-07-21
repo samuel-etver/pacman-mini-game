@@ -12,15 +12,15 @@
             "scaleInDock": 1
         },
         "layer2-tiles.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 0.33,
             "scaleInEditor": 1
         },
         "scene1.tmx": {
-            "scale": 0.33,
+            "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1290.9090909090908,
-                "y": 215.15151515151513
+                "x": 1108,
+                "y": 1126
             }
         }
     },

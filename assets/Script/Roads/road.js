@@ -6,6 +6,7 @@ cc.Class({
 
     properties: {
         gemsEnabled: true,
+        tag: 0
     }, 
 
 
