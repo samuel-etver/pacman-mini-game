@@ -3029,7 +3029,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Horz Road",
+    "_name": "Horz Road copy",
     "_objFlags": 0,
     "_parent": {
       "__id__": 12
@@ -3092,7 +3092,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "eadVhKiEBCuqOiYl/+qkql"
+    "_id": "d5wPKMhnhIt6jTgtQyCA8K"
   },
   {
     "__type__": "cc.Sprite",
@@ -3124,7 +3124,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "d2QoSpU5dOfIIk8xnsnaQm"
+    "_id": "f3I1P5dMRKv6IOOwOof/Bh"
   },
   {
     "__type__": "c4994SJBEhBbYTEvdKkhw5U",
@@ -3135,9 +3135,9 @@
     },
     "_enabled": true,
     "gemsEnabled": true,
-    "tag": 0,
+    "tag": 7,
     "direction": 0,
-    "_id": 23
+    "_id": 42
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3388,7 +3388,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Vert Road",
+    "_name": "Vert Road copy",
     "_objFlags": 0,
     "_parent": {
       "__id__": 97
@@ -3451,7 +3451,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "046kDJNE5BPJ6oBhgl3DFQ"
+    "_id": "13PZvbhLhMDLdN4QIO9DoQ"
   },
   {
     "__type__": "cc.Sprite",
@@ -3483,7 +3483,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "f9V7AOr/JF2rwIofD92q43"
+    "_id": "4dtAk8ypdOaYao4jmwaFjz"
   },
   {
     "__type__": "56874z35lVOa6xCewDwbU97",
@@ -3496,7 +3496,7 @@
     "gemsEnabled": true,
     "tag": 0,
     "direction": 0,
-    "_id": 13
+    "_id": 125
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -3617,7 +3617,7 @@
     },
     "_enabled": true,
     "gemsEnabled": true,
-    "tag": 0,
+    "tag": 300,
     "direction": 0,
     "_id": 27
   },
@@ -7906,8 +7906,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -317.755,
-        112.735,
+        64.95,
+        114.112,
         0,
         0,
         0,

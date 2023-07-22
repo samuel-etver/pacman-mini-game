@@ -40,7 +40,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 5,
-      "height": 10
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -51,15 +51,15 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -193.153,
-        -125.184,
+        0,
+        0,
         0,
         0,
         0,
         0,
         1,
         1,
-        10,
+        1,
         1
       ]
     },
@@ -95,7 +95,7 @@
       "__uuid__": "0bf017bf-3dc4-4d4c-a307-ea383c96ec9a"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -117,6 +117,8 @@
     },
     "_enabled": true,
     "gemsEnabled": true,
+    "tag": 0,
+    "direction": 0,
     "_id": ""
   },
   {

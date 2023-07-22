@@ -33,6 +33,9 @@
     ]
   ],
   "excluded-modules": [
+    "DragonBones",
+    "Physics",
+    "VideoPlayer",
     "3D",
     "3D Primitive",
     "3D Physics/cannon.js",
