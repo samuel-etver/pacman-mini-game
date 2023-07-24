@@ -170,12 +170,15 @@ cc.Class({
             y: this.node.y
         };
 
-        let calculateNextPosition = function () {
+        let calculateNextPosition = function (maxRoute) {
+            maxRoute = maxRoute ?? 2;
             let nextCrossroad = this.roadNetworkGraph.getNextCrossroad(
                 currentPosition,
                 this.currentData.direction,
                 this.currentData.roadId
             );
+
+
             if (nextCrossroad) {
                 let road = this.roadNetworkGraph.roads.refById[this.currentData.roadId];
                 let coord1Name = road.getCoord1Name();
@@ -200,7 +203,7 @@ cc.Class({
                     }
                     if (this.roadNetworkGraph.hasRoadTowardsDirection(nextCrossroad, this.currentData.direction)) {
                         this.currentData.roadId = nextCrossroad.getRoadIdTowardsDirection(this.currentData.direction);
-                        calculateNextPosition();
+                        maxRoute > 1 && calculateNextPosition(maxRoute - 1);
                     }
                 }
             }

@@ -156,9 +156,10 @@ class Road {
     }
 
 
-    inRange (pos) {
+    inRange (pos, magnitude) {
+        magnitude = magnitude ?? 0;
         let [pos0, pos1] = this.getRange();
-        return Geom.between(pos, pos0, pos1); 
+        return Geom.between(pos, pos0 - magnitude, pos1 + magnitude); 
     }
 
 
@@ -500,6 +501,7 @@ class GraphBuilder {
             iterate(allRoads, (iRoad, jRoad) => {
                 let crossroadX;
                 let crossroadY;
+
                 let [iRoadX0, iRoadY0] = [iRoad.getX0(), iRoad.getY0()];
                 let [iRoadX1, iRoadY1] = [iRoad.getX1(), iRoad.getY1()];
                 let [jRoadX0, jRoadY0] = [jRoad.getX0(), jRoad.getY0()];
@@ -515,8 +517,8 @@ class GraphBuilder {
                     crossroadY = iRoadY1;        
                 }
                 else if (iRoad.orientation != jRoad.orientation && (
-                         iRoad.inRange(jRoad.getCoord2()) &&
-                         jRoad.inRange(iRoad.getCoord2()))) {
+                         iRoad.inRange(jRoad.getCoord2(), MAGNETIC_FIELD_DEF) &&
+                         jRoad.inRange(iRoad.getCoord2(), MAGNETIC_FIELD_DEF))) {
                     [crossroadX, crossroadY] = iRoad.orientation == horzOrientation
                         ? [jRoad.getCoord2(), iRoad.getCoord2()] 
                         : [iRoad.getCoord2(), jRoad.getCoord2()];
