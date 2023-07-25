@@ -221,28 +221,28 @@ cc.Class({
     onKeyDown (event) {
         let direction;
 
+        const KEY = cc.macro.KEY;
+
         switch (event.keyCode) {
-            case cc.macro.KEY.a:
-            case cc.macro.KEY.left:  
+            case KEY.a:
+            case KEY.left:  
                 direction = Directions.WEST;
                 break;
-            case cc.macro.KEY.d:
-            case cc.macro.KEY.right:
+            case KEY.d:
+            case KEY.right:
                 direction = Directions.EAST;
                 break;
-            case cc.macro.KEY.w:
-            case cc.macro.KEY.up:
+            case KEY.w:
+            case KEY.up:
                 direction = Directions.NORTH;
                 break;
-            case cc.macro.KEY.s:
-            case cc.macro.KEY.down:    
+            case KEY.s:
+            case KEY.down:    
                 direction = Directions.SOUTH;
                 break;
         }
 
-        if (direction !== undefined) {
-            this.changeDirection(direction);
-        }
+        this.changeDirection(direction);
     },
 
 
@@ -254,13 +254,17 @@ cc.Class({
             bottom: Directions.SOUTH
         }[buttonName];
 
-        if (direction !== undefined) {
-            this.newDirection = direction;
-        }
+        this.changeDirection(direction);
     },
 
 
     changeDirection (direction) {
+        if(direction === undefined)
+          return;
+
+        if (this.currentData.direction === Directions.NONE) {
+            this.currentData.direction = Directions.EAST;
+        }
         this.newDirection = direction;        
     },
 

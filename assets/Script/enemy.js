@@ -153,7 +153,8 @@ cc.Class({
             y: this.node.y
         };
 
-        let calculateNextPosition = function () {
+        let calculateNextPosition = function (maxRoute) {
+            maxRoute = maxRoute ?? 2;
             let nextCrossroad = this.roadNetworkGraph.getNextCrossroad(
                 currentPosition,
                 this.currentDirection,
@@ -187,7 +188,7 @@ cc.Class({
                     this.currentDirection =
                       availableDirections[Math.floor(Math.random() * availableDirections.length)];
                     this.currentRoadId = nextCrossroad.getRoadIdTowardsDirection(this.currentDirection);
-                    calculateNextPosition();
+                    maxRoute > 1 && calculateNextPosition(maxRoute - 1);
                 }
             }
         }.bind(this);
