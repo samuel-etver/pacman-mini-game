@@ -1,4 +1,4 @@
-<tnz framecount="18" version="71.1">
+<tnz framecount="19" version="71.1">
   <generator>
     "Tahoma2D 1.3.1"
   </generator>
@@ -85,7 +85,7 @@
             <property max="100" min="0" name="Bottom Padding" type="int" value="0"/>
             <property max="100" min="0" name="Left Padding" type="int" value="0"/>
             <property max="100" min="0" name="Right Padding" type="int" value="0"/>
-            <property max="100" min="1" name="Scale" type="int" value="50"/>
+            <property max="100" min="1" name="Scale" type="int" value="45"/>
             <property name="Trim Empty Space" type="bool" value="true"/>
             </formatProperties>
           <formatProperties ext="tif">
@@ -407,7 +407,7 @@
             0 10 <level id='2'/>0001 1 
           </cell>
           <cell>
-            10 8 <level id='2'/>0009 -1 
+            10 9 <level id='2'/>0009 -1 
           </cell>
           </cells>
         <fx>
@@ -418,7 +418,7 @@
             <ports>
               </ports>
             <dagNodePos>
-              24926 24983 
+              24715.4 24900 
             </dagNodePos>
             <numberId>
               0 
@@ -548,7 +548,7 @@
           </default>
           </sc>
         <nodePos>
-          24620 25500 
+          24620 25450 
         </nodePos>
         </pegbar>
       <grid_dimension>
@@ -572,54 +572,172 @@
               </params>
             <ports>
               <Source>
-                <STD_erodeDilateFx id='6'>
+                <STD_brightContFx id='6'>
                   
                   <params>
-                    <type>
-                      0 
-                    </type>
-                    <radius>
+                    <globalIntensity>
                       <default>
-                        2.22222 
+                        1 
                       </default>
-                      </radius>
+                      </globalIntensity>
+                    <brightness>
+                      <default>
+                        10.934 
+                      </default>
+                      </brightness>
+                    <contrast>
+                      <default>
+                        -113.543 
+                      </default>
+                      </contrast>
                     </params>
                   <ports>
                     <Source>
-                      <Toonz_columnFx id='4'/>
+                      <STD_channelMixerFx id='7'>
+                        
+                        <params>
+                          <globalIntensity>
+                            <default>
+                              1 
+                            </default>
+                            </globalIntensity>
+                          <red_to_red>
+                            <default>
+                              0 
+                            </default>
+                            </red_to_red>
+                          <green_to_red>
+                            <default>
+                              0 
+                            </default>
+                            </green_to_red>
+                          <blue_to_red>
+                            <default>
+                              0 
+                            </default>
+                            </blue_to_red>
+                          <matte_to_red>
+                            <default>
+                              0 
+                            </default>
+                            </matte_to_red>
+                          <red_to_green>
+                            <default>
+                              0 
+                            </default>
+                            </red_to_green>
+                          <green_to_green>
+                            <default>
+                              0 
+                            </default>
+                            </green_to_green>
+                          <blue_to_green>
+                            <default>
+                              0 
+                            </default>
+                            </blue_to_green>
+                          <matte_to_green>
+                            <default>
+                              0 
+                            </default>
+                            </matte_to_green>
+                          <red_to_blue>
+                            <default>
+                              0 
+                            </default>
+                            </red_to_blue>
+                          <green_to_blue>
+                            <default>
+                              0 
+                            </default>
+                            </green_to_blue>
+                          <blue_to_blue>
+                            <default>
+                              0 
+                            </default>
+                            </blue_to_blue>
+                          <matte_to_blue>
+                            <default>
+                              0 
+                            </default>
+                            </matte_to_blue>
+                          <red_to_matte>
+                            <default>
+                              0 
+                            </default>
+                            </red_to_matte>
+                          <green_to_matte>
+                            <default>
+                              0 
+                            </default>
+                            </green_to_matte>
+                          <blue_to_matte>
+                            <default>
+                              0 
+                            </default>
+                            </blue_to_matte>
+                          <matte_to_matte>
+                            <default>
+                              1 
+                            </default>
+                            </matte_to_matte>
+                          </params>
+                        <ports>
+                          <Source>
+                            <Toonz_columnFx id='4'/>
+                          </Source>
+                          </ports>
+                        <dagNodePos>
+                          24854.2 24693.3 
+                        </dagNodePos>
+                        <numberId>
+                          1 
+                        </numberId>
+                        <name>
+                          ChannelMixer01 
+                        </name>
+                        <fxId>
+                          ChannelMixer01 
+                        </fxId>
+                        <opened>
+                          0 
+                        </opened>
+                        
+                      </STD_channelMixerFx>
+                      
                     </Source>
                     </ports>
                   <dagNodePos>
-                    25068 25070 
+                    24991.4 24695.5 
                   </dagNodePos>
                   <numberId>
                     1 
                   </numberId>
                   <name>
-                    ErodeDilate01 
+                    BrightnessContrast01 
                   </name>
                   <fxId>
-                    ErodeDilate01 
+                    BrightnessContrast01 
                   </fxId>
                   <opened>
                     0 
                   </opened>
                   
-                </STD_erodeDilateFx>
+                </STD_brightContFx>
                 
               </Source>
               </ports>
             <dagNodePos>
-              25221 25120 
+              25131.5 24783.2 
             </dagNodePos>
             <numberId>
-              1 
+              2 
             </numberId>
             <name>
-              Blur01 
+              Blur02 
             </name>
             <fxId>
-              Blur01 
+              Blur02 
             </fxId>
             <opened>
               0 
@@ -629,10 +747,7 @@
           
         </fxnode>
         <fxnode>
-          <STD_erodeDilateFx id='6'/>
-        </fxnode>
-        <fxnode>
-          <overFx id='7'>
+          <overFx id='8'>
             
             <params>
               </params>
@@ -641,13 +756,50 @@
                 <Toonz_columnFx id='4'/>
               </Source1>
               <Source2>
-                <STD_blurFx id='5'/>
+                <STD_blurFx id='9'>
+                  
+                  <params>
+                    <value>
+                      <default>
+                        8.88889 
+                      </default>
+                      </value>
+                    <useSSE>
+                      1 1 
+                    </useSSE>
+                    </params>
+                  <ports>
+                    <Source>
+                      <Toonz_columnFx id='4'/>
+                    </Source>
+                    </ports>
+                  <dagNodePos>
+                    25043.5 25000.7 
+                  </dagNodePos>
+                  <numberId>
+                    1 
+                  </numberId>
+                  <name>
+                    Blur01 
+                  </name>
+                  <fxId>
+                    Blur01 
+                  </fxId>
+                  <opened>
+                    0 
+                  </opened>
+                  
+                </STD_blurFx>
+                
               </Source2>
               <Source3>
-                </Source3>
+                <STD_blurFx id='5'/>
+              </Source3>
+              <Source4>
+                </Source4>
               </ports>
             <dagNodePos>
-              25341 25057 
+              25253.2 24965.6 
             </dagNodePos>
             <numberId>
               1 
@@ -665,21 +817,30 @@
           </overFx>
           
         </fxnode>
+        <fxnode>
+          <STD_blurFx id='9'/>
+        </fxnode>
+        <fxnode>
+          <STD_brightContFx id='6'/>
+        </fxnode>
+        <fxnode>
+          <STD_channelMixerFx id='7'/>
+        </fxnode>
         </internal>
       <terminal>
         <fxnode>
-          <overFx id='7'/>
+          <overFx id='8'/>
         </fxnode>
         </terminal>
       <xsheet>
-        <Toonz_xsheetFx id='8'>
+        <Toonz_xsheetFx id='10'>
           
           <params>
             </params>
           <ports>
             </ports>
           <dagNodePos>
-            25446 25023 
+            25369.9 24883.3 
           </dagNodePos>
           <numberId>
             0 
@@ -698,17 +859,17 @@
         
       </xsheet>
       <output>
-        <Toonz_outputFx id='9'>
+        <Toonz_outputFx id='11'>
           
           <params>
             </params>
           <ports>
             <source>
-              <Toonz_xsheetFx id='8'/>
+              <Toonz_xsheetFx id='10'/>
             </source>
             </ports>
           <dagNodePos>
-            25496 24931 
+            25496 24898.3 
           </dagNodePos>
           <numberId>
             0 
@@ -742,5 +903,8 @@
     "| #7   03 июл 23   21:44   DESKTOP-DB1FSam             |"
     "| #8   03 июл 23   22:03   DESKTOP-DB1FSam             |"
     "| #9   03 июл 23   22:08   DESKTOP-DB1FSam             |"
+    "| #10  26 июл 23   21:09   DESKTOP-DB1FSam             |"
+    "| #11  26 июл 23   21:26   DESKTOP-DB1FSam             |"
+    "| #12  26 июл 23   21:49   DESKTOP-DB1FSam             |"
   </history>
   </tnz>
