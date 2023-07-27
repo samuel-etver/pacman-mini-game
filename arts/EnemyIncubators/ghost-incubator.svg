@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="ghost-incubator.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0557596"
+     inkscape:cx="95.192123"
+     inkscape:cy="297.41618"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1"
+       x="-0.046340184"
+       y="-0.046340181"
+       width="1.0926804"
+       height="1.0926804">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.1585046"
+         id="feGaussianBlur1" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2"
+       x="-0.012280692"
+       y="-0.012280692"
+       width="1.0245614"
+       height="1.0245614">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.25623856"
+         id="feGaussianBlur2" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3"
+       x="-0.022591672"
+       y="-0.022591671"
+       width="1.0451833"
+       height="1.0451833">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.5647918"
+         id="feGaussianBlur3" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4"
+       x="-0.014952947"
+       y="-0.014952947"
+       width="1.0299059"
+       height="1.0299059">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.31199558"
+         id="feGaussianBlur4" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5"
+       x="-0.18645917"
+       y="-0.18645917"
+       width="1.3729183"
+       height="1.3729183">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.8904996"
+         id="feGaussianBlur5" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g6"
+       transform="translate(-60.959427,-17.011933)"
+       inkscape:export-filename=".\ghost-incubator.png"
+       inkscape:export-xdpi="24.795292"
+       inkscape:export-ydpi="24.795292"
+       inkscape:label="Ghost Incubator">
+      <ellipse
+         style="fill:#252525;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter1)"
+         id="path1"
+         cx="115.05967"
+         cy="63.315041"
+         rx="30"
+         ry="30.000002" />
+      <ellipse
+         style="fill:#99cbff;fill-opacity:1;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter3)"
+         id="ellipse1"
+         cx="115.05967"
+         cy="63.315041"
+         rx="30"
+         ry="30.000002" />
+      <circle
+         style="fill:#205286;fill-opacity:1;stroke-width:0.225728;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter2)"
+         id="ellipse2"
+         cx="115.05967"
+         cy="63.315041"
+         r="25.038187"
+         transform="matrix(0.88602083,0,0,0.88602083,13.114406,7.2165961)" />
+      <circle
+         style="fill:#75b0ee;fill-opacity:1;stroke-width:0.23894;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter4)"
+         id="circle3"
+         cx="115.05967"
+         cy="63.315041"
+         r="25.038187"
+         transform="matrix(0.83703014,0,0,0.83703014,18.751258,10.318443)" />
+      <circle
+         style="opacity:1;mix-blend-mode:normal;fill:#2c6aac;fill-opacity:1;stroke-width:0.780376;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter5)"
+         id="circle4"
+         cx="115.05967"
+         cy="63.315041"
+         r="25.038187"
+         transform="matrix(0.25628627,0,0,0.25628627,85.571456,47.088264)" />
+    </g>
+  </g>
+</svg>

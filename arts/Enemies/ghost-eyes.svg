@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="ghost-eyes.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4930696"
+     inkscape:cx="187.19824"
+     inkscape:cy="555.23199"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3"
+       x="-0.070287862"
+       y="-0.070287862"
+       width="1.1405757"
+       height="1.1405757">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.7571966"
+         id="feGaussianBlur3" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4"
+       x="-0.076721574"
+       y="-0.076721574"
+       width="1.1534431"
+       height="1.1534431">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.253488"
+         id="feGaussianBlur4" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5"
+       x="-0.038986665"
+       y="-0.038986665"
+       width="1.0779733"
+       height="1.0779733">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.91767242"
+         id="feGaussianBlur5" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter17"
+       x="-0.076721574"
+       y="-0.076721574"
+       width="1.1534431"
+       height="1.1534431">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.253488"
+         id="feGaussianBlur17" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter18"
+       x="-0.038986665"
+       y="-0.038986665"
+       width="1.0779733"
+       height="1.0779733">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.91767242"
+         id="feGaussianBlur18" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter19"
+       x="-0.017282721"
+       y="-0.017282721"
+       width="1.0345654"
+       height="1.0345654">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.43206801"
+         id="feGaussianBlur19" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter20"
+       x="-0.017282721"
+       y="-0.017282721"
+       width="1.0345654"
+       height="1.0345654">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.43206801"
+         id="feGaussianBlur20" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter21"
+       x="-0.075011806"
+       y="-0.075011806"
+       width="1.1500236"
+       height="1.1500236">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.8752952"
+         id="feGaussianBlur21" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g9"
+       inkscape:label="Eyes (Down)"
+       inkscape:export-filename=".\ghost-eyes (down).png"
+       inkscape:export-xdpi="18.382639"
+       inkscape:export-ydpi="18.382639">
+      <g
+         id="g5"
+         transform="matrix(0.66394168,0,0,0.64079313,8.0850628,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Right Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter3)"
+           id="circle3"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter20)"
+           id="path1"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter5)"
+           id="circle1"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter17)"
+           id="circle2"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,6.2853657,6.5260401)" />
+      </g>
+      <g
+         id="g8"
+         transform="matrix(0.66394168,0,0,0.64079313,51.845647,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Left Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter21)"
+           id="circle5"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter19)"
+           id="circle6"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter18)"
+           id="circle7"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter4)"
+           id="circle8"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,6.2853657,6.5260401)" />
+      </g>
+    </g>
+    <g
+       id="g29"
+       inkscape:label="Eyes (Down)"
+       inkscape:export-filename=".\ghost-eyes (up).png"
+       inkscape:export-xdpi="18.382639"
+       inkscape:export-ydpi="18.382639"
+       transform="matrix(1,0,0,-1,0,152.72549)">
+      <g
+         id="g24"
+         transform="matrix(0.66394168,0,0,0.64079313,8.0850628,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Right Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter3)"
+           id="circle21"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter20)"
+           id="circle22"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter5)"
+           id="circle23"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter17)"
+           id="circle24"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,6.2853657,6.5260401)" />
+      </g>
+      <g
+         id="g28"
+         transform="matrix(0.66394168,0,0,0.64079313,51.845647,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Left Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter21)"
+           id="circle25"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter19)"
+           id="circle26"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter18)"
+           id="circle27"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter4)"
+           id="circle28"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,6.2853657,6.5260401)" />
+      </g>
+    </g>
+    <g
+       id="g37"
+       inkscape:label="Eyes (Right)"
+       inkscape:export-filename=".\ghost-eyes (right).png"
+       inkscape:export-xdpi="18.382639"
+       inkscape:export-ydpi="18.382639"
+       transform="matrix(1,0,0,-1,0,205.85469)">
+      <g
+         id="g32"
+         transform="matrix(0.66394168,0,0,0.64079313,8.0850628,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Right Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter3)"
+           id="circle29"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter20)"
+           id="circle30"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter5)"
+           id="circle31"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter17)"
+           id="circle32"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,13.966737,-0.65302884)" />
+      </g>
+      <g
+         id="g36"
+         transform="matrix(0.66394168,0,0,0.64079313,51.845647,10.622435)"
+         style="stroke-width:1.53312"
+         inkscape:label="Left Eye">
+        <circle
+           style="fill:#252525;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter21)"
+           id="circle33"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke-width:0.306624;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter19)"
+           id="circle34"
+           cx="54.05851"
+           cy="59.571915"
+           r="30" />
+        <circle
+           style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.323202;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter18)"
+           id="circle35"
+           cx="54.05851"
+           cy="59.571915"
+           r="28.245731"
+           transform="matrix(0.9487066,0,0,0.9487066,2.7728444,3.0556457)" />
+        <circle
+           style="mix-blend-mode:normal;fill:#010000;fill-opacity:1;stroke-width:0.346965;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:5.21575;paint-order:stroke markers fill;filter:url(#filter4)"
+           id="circle36"
+           cx="54.05851"
+           cy="68.211876"
+           r="19.60577"
+           transform="matrix(0.88373032,0,0,0.88373032,13.966737,-0.65302884)" />
+      </g>
+    </g>
+  </g>
+</svg>

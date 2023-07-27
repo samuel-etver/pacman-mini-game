@@ -5,7 +5,11 @@ const Directions = require('directions');
 let globalStorage = GlobalStorage.getInstance();
 let globalEventSystem = GlobalEventSystem.getInstance();
 
-const enemyBodyNodeName = 'Enemy Body';
+const enemyBodyNodeName = 'Body';
+const enemyEyesDownName = 'Eyes Down';
+const enemyEyesUpName = 'Eyes Up';
+const enemyEyesRightName = 'Eyes Right';
+const enemyEyesLeftName = 'Eyes Left';
 
 const rankLow  = -1000;
 
@@ -54,6 +58,10 @@ cc.Class({
         globalEventSystem.subscribe('enemies-harmless', this.onEnemyHarmless);
 
         this.enemyBodyNode = this.node.getChildByName(enemyBodyNodeName);
+        this.enemyEyesDown = this.node.getChildByName(enemyEyesDownName);
+        this.enemyEyesUp   = this.node.getChildByName(enemyEyesUpName);
+        this.enemyEyesRight = this.node.getChildByName(enemyEyesRightName);
+        this.enemyEyesLeft = this.node.getChildByName(enemyEyesLeftName);
         this.collider = this.getComponent(cc.Collider);
 
         this.node.active = false;
@@ -138,6 +146,7 @@ cc.Class({
 
     update (dt) {        
         this.movementEnabled && this.updatePosition(dt);
+        this.updateAnimation();
     },
 
 
@@ -242,5 +251,14 @@ cc.Class({
 
     deactivateEnemy (value) {
         this.activateEnemy(false);
+    },
+
+
+    updateAnimation () {
+        let direction = this.currentDirection;
+        this.enemyEyesDown.active = direction === Directions.SOUTH;
+        this.enemyEyesUp.active = direction === Directions.NORTH;
+        this.enemyEyesRight.active = direction === Directions.EAST;        
+        this.enemyEyesLeft.active = direction === Directions.WEST;
     }
 });
