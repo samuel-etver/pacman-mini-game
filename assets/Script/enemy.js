@@ -24,6 +24,7 @@ cc.Class({
         this.initialDirection = undefined;   
         this.movementEnabled = false;
         this.rankNormal = 0;
+        this.alive = true;
     },
 
 
@@ -244,8 +245,8 @@ cc.Class({
 
     activateEnemy (value) {
         value = value ?? true;
+        this.alive = value;
         this.collider.enabled = value;
-        this.enemyBodyNode.active = value;
     },
 
 
@@ -256,9 +257,11 @@ cc.Class({
 
     updateAnimation () {
         let direction = this.currentDirection;
-        this.enemyEyesDown.active = direction === Directions.SOUTH;
-        this.enemyEyesUp.active = direction === Directions.NORTH;
-        this.enemyEyesRight.active = direction === Directions.EAST;        
-        this.enemyEyesLeft.active = direction === Directions.WEST;
+        let alive = this.alive;
+        this.enemyBodyNode.active = alive;
+        this.enemyEyesDown.active = alive && direction === Directions.SOUTH;
+        this.enemyEyesUp.active = alive && direction === Directions.NORTH;
+        this.enemyEyesRight.active = alive && direction === Directions.EAST;        
+        this.enemyEyesLeft.active = alive && direction === Directions.WEST;
     }
 });
