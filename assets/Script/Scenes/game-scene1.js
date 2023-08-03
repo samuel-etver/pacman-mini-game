@@ -128,8 +128,12 @@ cc.Class({
 
 
     onControlPanelButtonClick (event, buttonName) {
-        if (buttonName == 'menu') {
-            globalEventSystem.publish('scene-main-menu-show');
+        switch(buttonName) {
+            case 'pause': 
+                globalEventSystem.publish('scene-main-menu-show');
+                break;
+            case 'options':
+                break;
         }
     },
 
