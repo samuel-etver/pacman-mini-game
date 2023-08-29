@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Enemy Material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "819c1624-00f2-43ad-a225-04c702f2c386"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}
