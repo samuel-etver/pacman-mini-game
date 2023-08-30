@@ -33,7 +33,6 @@
     ]
   ],
   "excluded-modules": [
-    "DragonBones",
     "Physics",
     "VideoPlayer",
     "3D",

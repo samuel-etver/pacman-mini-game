@@ -13,6 +13,14 @@ const enemyEyesLeftName = 'Eyes Left';
 
 const rankLow  = -1000;
 
+let EnemyShaderStatus = {
+    NONE: 0,
+    NORMAL: 1,
+    HARMLESS: 2
+};
+
+
+
 cc.Class({
     extends: cc.Component,
 
@@ -25,6 +33,8 @@ cc.Class({
         this.movementEnabled = false;
         this.rankNormal = 0;
         this.alive = true;
+        this.currentShaderStatus = EnemyShaderStatus.NONE;
+        this.requeredShaderStatus = EnemyShaderStatus.NORMAL;
     },
 
 
@@ -91,6 +101,7 @@ cc.Class({
     onEnemyHarmless () {
         this.unschedule(this.onEnemyHarmlessTimeout);
         this.setRankLow();
+        this.requeredShaderStatus = EnemyShaderStatus.HARMLESS;
         this.scheduleOnce(this.onEnemyHarmlessTimeout,
           globalStorage.scene.harmlessEnemiesDuration);
     },
@@ -98,6 +109,7 @@ cc.Class({
 
     onEnemyHarmlessTimeout () {
         this.setRankNormal();
+        this.requeredShaderStatus = EnemyShaderStatus.NORMAL;
     },
 
 
@@ -239,6 +251,7 @@ cc.Class({
             this.moveToInitialPosition();
             this.currentDirection = this.initialDirection;
             this.activateEnemy();
+            this.requeredShaderStatus = EnemyShaderStatus.NORMAL;
         }, globalStorage.scene.delayAfterEnemyDie + 3);
     },
 
@@ -263,5 +276,23 @@ cc.Class({
         this.enemyEyesUp.active = alive && direction === Directions.NORTH;
         this.enemyEyesRight.active = alive && direction === Directions.EAST;        
         this.enemyEyesLeft.active = alive && direction === Directions.WEST;
+
+        if (this.currentShaderStatus !== this.requeredShaderStatus) {
+            this.currentShaderStatus = this.requeredShaderStatus;
+            let blueActiveValue = this.currentShaderStatus === EnemyShaderStatus.NORMAL ? 0 : 1;
+            let gameObjects = [
+                this.enemyEyesDown,
+                this.enemyEyesLeft,
+                this.enemyEyesRight,
+                this.enemyEyesUp
+            ];
+            for (let object of gameObjects) {
+                let sprite = object.getComponent(cc.Sprite);
+                let material = sprite.getMaterial(0);
+                material.setProperty("blueActive", blueActiveValue);
+            }
+
+            this.enemyBodyNode.getComponent(dragonBones.ArmatureDisplay).getMaterial(0).setProperty("alpha", 0.7);
+        }
     }
 });
