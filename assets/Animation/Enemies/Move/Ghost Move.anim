@@ -1,0 +1,79 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Ghost Move",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 10,
+  "speed": 2,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "b346ddae-a38e-4ea2-bfa9-641b1bcf4b2b"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "3f02892b-44cc-4bac-85fe-0de06944d73a"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "410ff35b-f287-4b9c-8705-d096cb0ed136"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "1b57954a-f320-47a8-8e11-927466f4c96d"
+            }
+          },
+          {
+            "frame": 0.4,
+            "value": {
+              "__uuid__": "425e8239-b2ff-4b2e-99cc-403ca5a0596b"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "76a166cf-c195-4bab-9a73-debbf74815ac"
+            }
+          },
+          {
+            "frame": 0.6,
+            "value": {
+              "__uuid__": "6f88fdd4-711b-4087-9159-e9c3e33115be"
+            }
+          },
+          {
+            "frame": 0.7,
+            "value": {
+              "__uuid__": "f856af89-69f5-4071-99ea-dcf5c041693e"
+            }
+          },
+          {
+            "frame": 0.8,
+            "value": {
+              "__uuid__": "e4979313-7ddd-4dc4-b39e-811532400951"
+            }
+          },
+          {
+            "frame": 0.9,
+            "value": {
+              "__uuid__": "ab7f72bc-68e8-4d95-8098-dbeadf0e4375"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

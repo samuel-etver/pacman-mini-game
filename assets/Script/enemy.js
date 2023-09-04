@@ -292,7 +292,8 @@ cc.Class({
                 material.setProperty("blueActive", blueActiveValue);
             }
 
-            this.enemyBodyNode.getComponent(dragonBones.ArmatureDisplay).getMaterial(0).setProperty("alpha", 0.7);
+            this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("blueActive", 0.0);
+            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("alpha", 0.7);
         }
     }
 });
