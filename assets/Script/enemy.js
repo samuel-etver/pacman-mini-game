@@ -281,6 +281,7 @@ cc.Class({
             this.currentShaderStatus = this.requeredShaderStatus;
             let blueActiveValue = this.currentShaderStatus === EnemyShaderStatus.NORMAL ? 0 : 1;
             let gameObjects = [
+                this.enemyBodyNode,
                 this.enemyEyesDown,
                 this.enemyEyesLeft,
                 this.enemyEyesRight,
@@ -292,8 +293,8 @@ cc.Class({
                 material.setProperty("blueActive", blueActiveValue);
             }
 
-            this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("blueActive", 0.0);
-            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("alpha", 0.7);
+            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("blueActive", 0.0);
+            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("alpha", 0.3);
         }
     }
 });

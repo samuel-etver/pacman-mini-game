@@ -7254,7 +7254,7 @@
     "_prefab": {
       "__id__": 246
     },
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -7351,7 +7351,7 @@
         0,
         1,
         0.15,
-        0.15,
+        0.17,
         1
       ]
     },
@@ -7383,9 +7383,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "b346ddae-a38e-4ea2-bfa9-641b1bcf4b2b"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -7990,7 +7988,7 @@
     "_prefab": {
       "__id__": 270
     },
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -8087,7 +8085,7 @@
         0,
         1,
         0.15,
-        0.15,
+        0.17,
         1
       ]
     },
@@ -8119,9 +8117,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "b346ddae-a38e-4ea2-bfa9-641b1bcf4b2b"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -8726,7 +8722,7 @@
     "_prefab": {
       "__id__": 294
     },
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -8823,7 +8819,7 @@
         0,
         1,
         0.15,
-        0.15,
+        0.17,
         1
       ]
     },
@@ -8855,9 +8851,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "b346ddae-a38e-4ea2-bfa9-641b1bcf4b2b"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -9462,7 +9456,7 @@
     "_prefab": {
       "__id__": 318
     },
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -9559,7 +9553,7 @@
         0,
         1,
         0.15,
-        0.15,
+        0.17,
         1
       ]
     },
@@ -9591,9 +9585,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "b346ddae-a38e-4ea2-bfa9-641b1bcf4b2b"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
