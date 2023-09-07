@@ -2,9 +2,9 @@ let globalConfig = {
     playerImmortal: false,
     playerLivesCountMax: 3,
     enemyToPlayerSpeedK: 0.8,
-    delayAfterEnemyDie: 5,
+    delayAfterEnemyDie: 10,
     delayAfterPlayerDie: 5,
-    harmlessEnemiesDuration: 5,   
+    harmlessEnemiesDuration: 15,   
     speedMin: 50,
     speedMax: 100,
     get speed () {

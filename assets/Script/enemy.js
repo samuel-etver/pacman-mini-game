@@ -5,20 +5,14 @@ const Directions = require('directions');
 let globalStorage = GlobalStorage.getInstance();
 let globalEventSystem = GlobalEventSystem.getInstance();
 
-const enemyBodyNodeName = 'Body';
-const enemyEyesDownName = 'Eyes Down';
-const enemyEyesUpName = 'Eyes Up';
-const enemyEyesRightName = 'Eyes Right';
-const enemyEyesLeftName = 'Eyes Left';
-
 const rankLow  = -1000;
 
 let EnemyShaderStatus = {
     NONE: 0,
     NORMAL: 1,
-    HARMLESS: 2
+    HARMLESS_1: 2,
+    HARMLESS_2: 3
 };
-
 
 
 cc.Class({
@@ -68,12 +62,23 @@ cc.Class({
         this.onEnemyHarmless = this.onEnemyHarmless.bind(this);
         globalEventSystem.subscribe('enemies-harmless', this.onEnemyHarmless);
 
-        this.enemyBodyNode = this.node.getChildByName(enemyBodyNodeName);
-        this.enemyEyesDown = this.node.getChildByName(enemyEyesDownName);
-        this.enemyEyesUp   = this.node.getChildByName(enemyEyesUpName);
-        this.enemyEyesRight = this.node.getChildByName(enemyEyesRightName);
-        this.enemyEyesLeft = this.node.getChildByName(enemyEyesLeftName);
-        this.collider = this.getComponent(cc.Collider);
+        this.enemyBody = this.node.getChildByName('Body');
+        this.enemyEyesDown = this.node.getChildByName('Eyes Down');
+        this.enemyEyesUp   = this.node.getChildByName('Eyes Up');
+        this.enemyEyesRight = this.node.getChildByName( 'Eyes Right');
+        this.enemyEyesLeft = this.node.getChildByName('Eyes Left');
+        this.enemyMaterials = [];
+        [
+          this.enemyBody,
+          this.enemyEyesDown,
+          this.enemyEyesUp,
+          this.enemyEyesRight,
+          this.enemyEyesLeft
+        ].forEach(part => {
+            let sprite = part.getComponent(cc.Sprite);
+            let material = sprite.getMaterial(0);
+            this.enemyMaterials.push(material);
+        });
 
         this.node.active = false;
     },
@@ -101,7 +106,9 @@ cc.Class({
     onEnemyHarmless () {
         this.unschedule(this.onEnemyHarmlessTimeout);
         this.setRankLow();
-        this.requeredShaderStatus = EnemyShaderStatus.HARMLESS;
+        this.requeredShaderStatus = this.currentShaderStatus === EnemyShaderStatus.HARMLESS_1 
+          ? EnemyShaderStatus.HARMLESS_2
+          : EnemyShaderStatus.HARMLESS_1;
         this.scheduleOnce(this.onEnemyHarmlessTimeout,
           globalStorage.scene.harmlessEnemiesDuration);
     },
@@ -251,15 +258,15 @@ cc.Class({
             this.moveToInitialPosition();
             this.currentDirection = this.initialDirection;
             this.activateEnemy();
-            this.requeredShaderStatus = EnemyShaderStatus.NORMAL;
-        }, globalStorage.scene.delayAfterEnemyDie + 3);
+        }, globalStorage.scene.delayAfterEnemyDie);
     },
 
 
     activateEnemy (value) {
         value = value ?? true;
         this.alive = value;
-        this.collider.enabled = value;
+        let collider = this.getComponent(cc.Collider);
+        collider.enabled = value;
     },
 
 
@@ -271,30 +278,50 @@ cc.Class({
     updateAnimation () {
         let direction = this.currentDirection;
         let alive = this.alive;
-        this.enemyBodyNode.active = alive;
-        this.enemyEyesDown.active = alive && direction === Directions.SOUTH;
-        this.enemyEyesUp.active = alive && direction === Directions.NORTH;
+        this.enemyBody.active = alive;
+        this.enemyEyesDown.active  = alive && direction === Directions.SOUTH;
+        this.enemyEyesUp.active    = alive && direction === Directions.NORTH;
         this.enemyEyesRight.active = alive && direction === Directions.EAST;        
-        this.enemyEyesLeft.active = alive && direction === Directions.WEST;
+        this.enemyEyesLeft.active  = alive && direction === Directions.WEST;
 
         if (this.currentShaderStatus !== this.requeredShaderStatus) {
             this.currentShaderStatus = this.requeredShaderStatus;
             let blueActiveValue = this.currentShaderStatus === EnemyShaderStatus.NORMAL ? 0 : 1;
-            let gameObjects = [
-                this.enemyBodyNode,
-                this.enemyEyesDown,
-                this.enemyEyesLeft,
-                this.enemyEyesRight,
-                this.enemyEyesUp
-            ];
-            for (let object of gameObjects) {
-                let sprite = object.getComponent(cc.Sprite);
-                let material = sprite.getMaterial(0);
-                material.setProperty("blueActive", blueActiveValue);
+            for (let material of this.enemyMaterials) {
+                material.setProperty('blueActive', blueActiveValue);
+                material.setProperty('alpha', 1.0);
             }
 
-            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("blueActive", 0.0);
-            //this.enemyBodyNode.getComponent(cc.Sprite).getMaterial(0).setProperty("alpha", 0.3);
+            this.blinkAnimation?.stop();
+            if (this.currentShaderStatus === EnemyShaderStatus.HARMLESS_1 ||
+                this.currentShaderStatus === EnemyShaderStatus.HARMLESS_2) {
+                this.blinkAnimation = this.createBlinkAnimation();
+                this.blinkAnimation.start();
+            }
         }
+    },
+
+
+    createBlinkAnimation () {
+        let shaderProperties = {
+            alpha: 1.0
+        };
+        let setShaderProperty = () => {
+          for (let material of this.enemyMaterials) {
+              material.setProperty('alpha', shaderProperties.alpha);
+        }};
+
+        let animation = cc.tween(shaderProperties)
+          .delay(5)
+          .repeat(1000, cc.tween()
+            .to(0.1, { alpha: 0.2 })
+            .call(() => setShaderProperty())
+            .delay(1)
+            .to(0.1, { alpha: 1.0 })
+            .call(() => setShaderProperty())
+            .delay(1)
+          );
+
+        return animation;
     }
 });
