@@ -26,12 +26,12 @@ let MainMenu = cc.Class({
 
 
     onOptionsButtonClick () {
-        dialogsFactory.execute(this, 'Options Dialog');
+        dialogsFactory.execute(this.node, 'Options Dialog');
     },
 
 
     onAchievementsButtonClick () {
-        dialogsFactory.execute(this, 'Achievements Dialog');
+        dialogsFactory.execute(this.node, 'Achievements Dialog');
     },
 
 

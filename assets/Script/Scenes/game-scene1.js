@@ -97,12 +97,12 @@ cc.Class({
     onWin () {        
         globalStorage.achievements.append(score.points);
         globalStorage.achievements.save();
-        dialogsFactory.execute(this, "Win Dialog");
+        dialogsFactory.execute(this.node, "Win Dialog");
     },
 
 
     onLose () {
-        dialogsFactory.execute(this, "Lose Dialog");
+        dialogsFactory.execute(this.node, "Lose Dialog");
     },
 
 
@@ -114,6 +114,11 @@ cc.Class({
     onDialogLoseRetryClick () {
         this.onDisable();
         this.loadScene();
+    },
+
+
+    onDialogOptionsMenuClick () {
+        dialogsFactory.execute(this.node, "Options Dialog");
     },
 
 
@@ -133,6 +138,7 @@ cc.Class({
                 globalEventSystem.publish('scene-main-menu-show');
                 break;
             case 'options':
+                this.onDialogOptionsMenuClick();
                 break;
         }
     },
