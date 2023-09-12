@@ -10,7 +10,7 @@ class DialogsFactory {
     execute (scene, dialogName) {
         let loadBackground = function (prefab) {
             globalStorage.scene.pauseActivated = true;
-            globalEventSystem.publish('pause-activated');
+            globalEventSystem.publish('game-pause');
             let background = cc.instantiate(prefab);
             scene.addChild(background);
             background.width = scene.width;
@@ -61,7 +61,7 @@ class DialogsFactory {
                 background.destroy();
                 this.resumeGame(scene);
                 globalStorage.scene.pauseActivated = false;
-                globalEventSystem.publish('pause-deactivated');
+                globalEventSystem.publish('game-resume');
             })    
             .start();  
     }

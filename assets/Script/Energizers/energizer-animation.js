@@ -16,7 +16,7 @@ cc.Class({
         .repeat( 5, cc.tween()
                       .to(0.2, {angle:  5})
                       .to(0.2, {angle: -5}))
-        .to(0.5, {angle: 0})            
+        .to(0.5, {angle: 0})
         .start();
-    },
+    }
 });

@@ -18,6 +18,12 @@ cc.Class({
         this.onPlayerStopped = this.onPlayerStopped.bind(this);
         globalEventSystem.subscribe('player-stopped', this.onPlayerStopped);
 
+        this.onGamePause = this.onGamePause.bind(this);
+        globalEventSystem.subscribe('game-pause', this.onGamePause);
+
+        this.onGameResume = this.onGameResume.bind(this);
+        globalEventSystem.subscribe('game-resume', this.onGameResume);
+
         this.animation = this.getComponent(sp.Skeleton);
         this.collider  = this.getComponent(cc.Collider);
         this.deactivateEnergizer();
@@ -27,6 +33,8 @@ cc.Class({
     onDestroy () {
         globalEventSystem.unsubscribe('player-started', this.onPlayerStarted);
         globalEventSystem.unsubscribe('player-stopped', this.onPlayerStopped);
+        globalEventSystem.unsubscribe('game-pause', this.onGamePause);
+        globalEventSystem.unsubscribe('game-resume', this.onGameResume);
 
         this.unscheduleAllCallbacks();
 
@@ -34,25 +42,43 @@ cc.Class({
     },
 
 
-    getInfluence: function () {
+    getInfluence () {
         return ['life-energizer'];
     },
 
 
-    onPlayerStarted: function () {
-        this.startBlink();
+    onPlayerStarted () {
+        this.resumeBlink();
+        this.hideTemporarily(1);
     },
 
 
-    onPlayerStopped: function () {
-        this.stopBlink();
+    onPlayerStopped () {
+        this.pauseBlink();
     },
 
 
-    startBlink () {
+    onGamePause () {
+        this.pauseBlink();
+    },
+
+
+    onGameResume () {
+        this.resumeBlink();
+    },
+
+
+    resumeBlink () {
         let scheduler = cc.director.getScheduler()
         scheduler.resumeTarget(this);
-        this.hideTemporarily(1);
+        this.animation.paused = false;
+    },
+
+
+    pauseBlink () { 
+        let scheduler = cc.director.getScheduler()
+        scheduler.pauseTarget(this);
+        this.animation.paused = true;
     },
 
 
@@ -71,12 +97,6 @@ cc.Class({
     hideTemporarily (value) {
         this.deactivateEnergizer();
         this.scheduleOnce(this.showTemporarily, value ?? 2);
-    },
-
-
-    stopBlink () { 
-        let scheduler = cc.director.getScheduler()
-        scheduler.pauseTarget(this);
     },
 
 

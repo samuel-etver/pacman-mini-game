@@ -78,6 +78,8 @@ cc.Class({
         }
 
         this.onControlPanelButtonDown = this.onControlPanelButtonDown.bind(this);
+        this.onGamePause = this.onGamePause.bind(this);
+        this.onGameResume = this.onGameResume.bind(this);
        
         this.animation = this.getComponent(cc.Animation);        
     },
@@ -102,6 +104,8 @@ cc.Class({
     onEnable () {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this); 
         globalEventSystem.subscribe('control-panel-button-down', this.onControlPanelButtonDown);       
+        globalEventSystem.subscribe('game-pause', this.onGamePause);
+        globalEventSystem.subscribe('game-resume', this.onGameResume);
         this.animation.on('lastframe', this.onAnimationLastFrame, this);
     },
 
@@ -109,6 +113,8 @@ cc.Class({
     onDisable () {
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         globalEventSystem.unsubscribe('control-panel-button-down', this.onControlPanelButtonDown);
+        globalEventSystem.unsubscribe('game-pause', this.onGamePause);
+        globalEventSystem.unsubscribe('game-resume', this.onGameResume);
         this.animation.off('lastframe', this.onAnimationLastFrame, this);
     },
 
@@ -415,6 +421,7 @@ cc.Class({
     win() {
         this.notifyPlayerStopped();
         this.movementEnabled = false;
+        this.animation.stop();
         globalEventSystem.publish('win');
     },
 
@@ -456,8 +463,25 @@ cc.Class({
         switch(animationState.name) {
             case animationClipNames.DIE:
                 this.playerStatus = PlayerStatus.DEAD;
-                this.animation.stop(animationClipNames.DIE);
+                this.animation.stop();
                 this.node.opacity = 0;                
+        }
+    },
+
+
+    onGamePause () {
+        let scheduler = cc.director.getScheduler();   
+        scheduler.pauseTarget(this);   
+        if (this.animation) {
+        }  
+    },
+
+
+    onGameResume () {
+        let scheduler = cc.director.getScheduler();
+        scheduler.resumeTarget(this);
+        if (this.animation) {
+          
         }
     }
 });
