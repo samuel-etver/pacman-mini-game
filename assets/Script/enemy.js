@@ -62,6 +62,12 @@ cc.Class({
         this.onEnemyHarmless = this.onEnemyHarmless.bind(this);
         globalEventSystem.subscribe('enemies-harmless', this.onEnemyHarmless);
 
+        this.onGamePause = this.onGamePause.bind(this);
+        globalEventSystem.subscribe('game-pause', this.onGamePause);
+
+        this.onGameResume = this.onGameResume.bind(this);
+        globalEventSystem.subscribe('game-resume', this.onGameResume);
+
         this.enemyBody = this.node.getChildByName('Body');
         this.enemyEyesDown = this.node.getChildByName('Eyes Down');
         this.enemyEyesUp   = this.node.getChildByName('Eyes Up');
@@ -88,6 +94,8 @@ cc.Class({
         globalEventSystem.unsubscribe('player-started', this.onPlayerStarted);
         globalEventSystem.unsubscribe('player-stopped', this.onPlayerStopped);
         globalEventSystem.unsubscribe('enemies-harmless', this.onEnemyHarmless);
+        globalEventSystem.unsubscribe('game-pause', this.onGamePause);
+        globalEventSystem.unsubscribe('game-resume', this.onGameResume);
 
         this.unscheduleAllCallbacks();
     },
@@ -293,35 +301,52 @@ cc.Class({
             }
 
             this.blinkAnimation?.stop();
+            this.blinkDelayFunction && this.unschedule(this.blinkDelayFunction);
             if (this.currentShaderStatus === EnemyShaderStatus.HARMLESS_1 ||
                 this.currentShaderStatus === EnemyShaderStatus.HARMLESS_2) {
                 this.blinkAnimation = this.createBlinkAnimation();
-                this.blinkAnimation.start();
+                this.blinkDelayFunction = () => this.blinkAnimation.start();
+                this.scheduleOnce(() => this.blinkDelayFunction(), 5);
             }
         }
     },
 
 
     createBlinkAnimation () {
-        let shaderProperties = {
-            alpha: 1.0
-        };
-        let setShaderProperty = () => {
-          for (let material of this.enemyMaterials) {
-              material.setProperty('alpha', shaderProperties.alpha);
-        }};
+        if (!this.animation) {
+            let shaderProperties = {
+                alpha: 1.0
+            };
+            let setShaderProperty = () => {
+              for (let material of this.enemyMaterials) {
+                  material.setProperty('alpha', shaderProperties.alpha);
+            }};
 
-        let animation = cc.tween(shaderProperties)
-          .delay(5)
-          .repeat(1000, cc.tween()
-            .to(0.1, { alpha: 0.2 })
-            .call(() => setShaderProperty())
-            .delay(1)
-            .to(0.1, { alpha: 1.0 })
-            .call(() => setShaderProperty())
-            .delay(1)
-          );
+            this.animation = cc.tween(shaderProperties)
+              .repeat(1000, cc.tween()
+                .to(0.1, { alpha: 0.2 })
+                .call(() => setShaderProperty())
+                .delay(1)
+                .to(0.1, { alpha: 1.0 })
+                .call(() => setShaderProperty())
+                .delay(1)
+              );
+        }
 
-        return animation;
+        return this.animation;
+    },
+
+
+    onGamePause () {
+        cc.director.getScheduler().pauseTarget(this);
+        let bodyAnimation = this.enemyBody.getComponent(cc.Animation);
+        bodyAnimation.pause();
+    },
+
+
+    onGameResume () {
+        cc.director.getScheduler().resumeTarget(this);
+        let bodyAnimation = this.enemyBody.getComponent(cc.Animation);
+        bodyAnimation.resume();
     }
 });
