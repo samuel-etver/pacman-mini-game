@@ -6,26 +6,19 @@ cc.Class({
     extends: cc.Component,
 
     onLoad () {
+        let self = this;
+
         let createEventHandler = function(handler, customEventData) {
             let eventHandler = new cc.Component.EventHandler();
-            eventHandler.target = this.node;
+            eventHandler.target = self.node;
             eventHandler.component = 'control-panel';
             eventHandler.handler = handler;
             eventHandler.customEventData = customEventData;
             return eventHandler;
-        }.bind(this);
-        
-        let addButtonEventHandlers = function(frame) {
-            let buttonName = frame.name;
-            let shortName = buttonName.replace(/\s+Button/, '').replace(/\s+/, '-').toLowerCase();
-            let clickEventHandler = createEventHandler('onButtonClick', shortName);
-            let button = this.node.getChildByName(buttonName).getComponent(cc.Button);
-            button.clickEvents.push(clickEventHandler);
-            this.node.getChildByName(buttonName).on('touchstart', () => this.onButtonTouch(shortName), this.node);
-        }.bind(this);  
+        };
 
         let addPlayerMovementControlHandlers = function () {            
-            let playerMovementControlNode = this.node.getChildByName('Player Movement Control');
+            let playerMovementControlNode = self.node.getChildByName('Player Movement Control');
             let playerMovementControl = playerMovementControlNode.getComponent('player-movement-control');
             let createPlayerMovementControHandler = 
               customEventData => createEventHandler('onButtonTouch', customEventData);
@@ -33,10 +26,8 @@ cc.Class({
             playerMovementControl.rightButtonDownEvent = createPlayerMovementControHandler('right');
             playerMovementControl.topButtonDownEvent = createPlayerMovementControHandler('top');
             playerMovementControl.bottomButtonDownEvent = createPlayerMovementControHandler('bottom');
-        }.bind(this);
+        };
         
-        let buttonFrames = this.node.children.filter(node => node.getComponent(cc.Button) !== null);
-        buttonFrames.forEach(frame => addButtonEventHandlers(frame));
         addPlayerMovementControlHandlers();
     },
 
@@ -46,7 +37,12 @@ cc.Class({
     },
 
 
-    onButtonClick (event, buttonShortName) {
-        globalEventSystem.publish('control-panel-button-click', buttonShortName);
+    onOptionsButtonClick () {
+        globalEventSystem.publish('control-panel-button-click', 'options');
     },
+
+
+    onPauseButtonClick () {
+        globalEventSystem.publish('control-panel-button-click', 'pause');
+    }
 });

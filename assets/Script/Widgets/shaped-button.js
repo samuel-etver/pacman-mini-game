@@ -42,7 +42,7 @@ cc.Class({
         if (cc.Intersection.pointInPolygon(touchLocation, this.collider.world.points)) {
             touch.stopPropagationImmediate = true;
             this.setDown(true);
-            this.downEvent?.emit();
+            this.downEvent?.emit([this.node]);
         }
     },
 
@@ -54,7 +54,7 @@ cc.Class({
 
         if (this.down) {
             this.setDown(false);
-            this.upEvent?.emit();
+            this.upEvent?.emit([this.node]);
         }
     },
 
