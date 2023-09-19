@@ -1,12 +1,14 @@
 const GlobalConfig = require('global-config');
 const GlobalEventSystem = require('global-event-system');
 const GlobalDataFile = require('global-data-file');
-let DialogsFactory = require('dialogs-factory');
+const DialogsFactory = require('dialogs-factory');
+const GlobalAudio = require('global-audio');
 
 let globalConfig = GlobalConfig.getInstance();
 let globalEventSystem = GlobalEventSystem.getInstance();
 let globalDataFile = GlobalDataFile.getInstance();
 let dialogsFactory = DialogsFactory.getInstance();
+let globalAudio = GlobalAudio.getInstance();
 
 cc.Class({
     extends: cc.Component,
@@ -114,6 +116,7 @@ cc.Class({
             globalConfig.soundVolume = this.soundVolume;
             globalDataFile.writeFloat('SoundVolume', this.soundVolume);
             globalEventSystem.publish('sound-volume-changed');
+            globalEventSystem.publish('play-sound', globalAudio.BUTTON_CLICK);
         }
     }
 });

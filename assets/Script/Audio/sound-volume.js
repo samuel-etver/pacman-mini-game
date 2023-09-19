@@ -9,10 +9,12 @@ let globalAudio = GlobalAudio.getInstance();
 cc.Class({
     extends: cc.Component,
 
+    properties: {
+        volume: 1.0
+    },
+
 
     onLoad () {
-        this.audioSource = this.getComponent(cc.AudioSource);
-        this.basicVolume = this.audioSource.volume;
         this.setVolume();
 
         this.onSoundVolumeChanged = this.onSoundVolumeChanged.bind(this);
@@ -40,6 +42,8 @@ cc.Class({
 
 
     setVolume () {
-        this.audioSource.volume = globalAudio.calculateSoundVolume(this.basicVolume);
+        cc.audioEngine.setEffectsVolume(
+          globalAudio.calculateSoundVolume(this.volume)
+        );
     }
 });

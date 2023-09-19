@@ -6,6 +6,10 @@ let instance;
 
 
 class GlobalAudio {
+    SoundClipIds = cc.Enum({
+        BUTTON_CLICK: 1
+    })
+
     calculateMusicVolume (basicVolume) {
         return basicVolume * globalConfig.musicVolume * (globalConfig.musicOn ? 1 : 0);
     }
