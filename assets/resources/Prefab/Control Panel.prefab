@@ -1374,6 +1374,7 @@
       "__id__": 24
     },
     "_enabled": true,
+    "clickSoundClip": 1,
     "downEvent": {
       "__id__": 33
     },
@@ -1458,6 +1459,7 @@
       "__id__": 17
     },
     "_enabled": true,
+    "clickSoundClip": 1,
     "downEvent": {
       "__id__": 37
     },
@@ -1542,6 +1544,7 @@
       "__id__": 10
     },
     "_enabled": true,
+    "clickSoundClip": 1,
     "downEvent": {
       "__id__": 41
     },
@@ -1626,6 +1629,7 @@
       "__id__": 3
     },
     "_enabled": true,
+    "clickSoundClip": 1,
     "downEvent": {
       "__id__": 45
     },
@@ -2002,6 +2006,7 @@
       "__id__": 50
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": null,
     "upEvent": {
       "__id__": 58
@@ -2347,6 +2352,7 @@
       "__id__": 61
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": null,
     "upEvent": {
       "__id__": 69

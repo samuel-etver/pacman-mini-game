@@ -1,13 +1,21 @@
 
 const GlobalStorage = require('global-storage');
+const GlobalEventSystem = require('global-event-system');
+const GlobalAudio = require('global-audio');
 
 let globalStorage = GlobalStorage.getInstance();
+let globalEventSystem = GlobalEventSystem.getInstance();
+let globalAudio = GlobalAudio.getInstance();
 
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        clickSoundClip: {
+            default: globalAudio.SoundClipIds.NONE,
+            type: globalAudio.SoundClipIds
+        },
         downEvent: {
             default: null,
             type: cc.Component.EventHandler
@@ -42,6 +50,7 @@ cc.Class({
         if (cc.Intersection.pointInPolygon(touchLocation, this.collider.world.points)) {
             touch.stopPropagationImmediate = true;
             this.setDown(true);
+            globalEventSystem.publish('play-sound', this.clickSoundClip);
             this.downEvent?.emit([this.node]);
         }
     },

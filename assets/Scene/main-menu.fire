@@ -354,7 +354,7 @@
     },
     "_enabled": true,
     "ButtonClickClip": {
-      "__uuid__": "3349038e-215a-4f92-a181-06df59e292e9"
+      "__uuid__": "15d9aa1f-e497-4fc7-b625-656db0bdefe7"
     },
     "_id": "16Mezx6dxAJ5rpX7KAvjr5"
   },
@@ -792,6 +792,7 @@
       "__id__": 13
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": {
       "__id__": 19
     },
@@ -1108,6 +1109,7 @@
       "__id__": 22
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": {
       "__id__": 28
     },
@@ -1424,6 +1426,7 @@
       "__id__": 31
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": {
       "__id__": 37
     },

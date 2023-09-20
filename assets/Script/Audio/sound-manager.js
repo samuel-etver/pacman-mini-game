@@ -33,20 +33,23 @@ cc.Class({
 
 
     onDisable () {
-        globalEventSystem.unsubscribe('play-sound', this.onPlay);
+        globalEventSystem.unsubscribe('play-sound', this.onPlay);        
+        this.stopAll();
     },
 
 
     onPlay (event, clipId) {
-        cc.log(event);
-        cc.log(clipId);
-        clipId = 1;
         this.play(clipId);
     },
 
 
     play (id) {
-        let clip = this.ButtonClickClip; //this.clipsLib[id];
+        let clip = this.clipsLib[id];
         clip && cc.audioEngine.playEffect(clip, false);
+    },
+
+
+    stopAll () {
+        cc.audioEngine.stopAll();
     }
 });

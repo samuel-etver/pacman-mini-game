@@ -15,4 +15,9 @@ cc.Class({
             cc.audioEngine.playMusic(this.clip, true);
         }
     },
+
+
+    onDisable () {
+        cc.audioEngine.stopMusic();
+    }
 });

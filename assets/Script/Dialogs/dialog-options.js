@@ -116,7 +116,7 @@ cc.Class({
             globalConfig.soundVolume = this.soundVolume;
             globalDataFile.writeFloat('SoundVolume', this.soundVolume);
             globalEventSystem.publish('sound-volume-changed');
-            globalEventSystem.publish('play-sound', globalAudio.BUTTON_CLICK);
+            globalEventSystem.publish('play-sound', globalAudio.SoundClipIds.BUTTON_CLICK);
         }
     }
 });
