@@ -122,6 +122,12 @@ cc.Class({
     },
 
 
+    onDialogPauseMenuClick () {
+        globalEventSystem.publish('scene-main-menu-show');
+        //dialogsFactory.execute(this.node, "Pause Dialog");
+    },
+
+
     onDialogWinMenuClick () {
         this.notifyShowMainMenuScene();
     },
@@ -135,9 +141,9 @@ cc.Class({
     onControlPanelButtonClick (event, buttonName) {
         switch(buttonName) {
             case 'pause': 
-                globalEventSystem.publish('scene-main-menu-show');
+                this.onDialogPauseMenuClick();
                 break;
-            case 'options':
+            case 'options':              
                 this.onDialogOptionsMenuClick();
                 break;
         }

@@ -9,10 +9,10 @@ cc.Class({
         }
     },
 
-
-    start () {
+    
+    onEnable () {
         if (this.clip) {
-            cc.audioEngine.playMusic(this.clip, true);
+          cc.audioEngine.playMusic(this.clip, true);
         }
     },
 

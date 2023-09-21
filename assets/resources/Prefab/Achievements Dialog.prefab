@@ -550,6 +550,7 @@
       "__id__": 5
     },
     "_enabled": true,
+    "clickSoundClip": 2,
     "downEvent": null,
     "upEvent": {
       "__id__": 14

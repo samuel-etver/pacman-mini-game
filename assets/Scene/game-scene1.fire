@@ -119,6 +119,9 @@
       },
       {
         "__id__": 357
+      },
+      {
+        "__id__": 358
       }
     ],
     "_prefab": null,
@@ -11422,5 +11425,18 @@
     },
     "_enabled": true,
     "_id": "eb1exl+XBLz7j3XLNTJrc4"
+  },
+  {
+    "__type__": "4192328BBpAkJ2Wo8qaoIlY",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "backgroundMusic": {
+      "__uuid__": "e2924081-7720-46e1-aa89-3f96a1cb1e4c"
+    },
+    "_id": "c86SrpjxNOR7UOnCAx/Yld"
   }
 ]

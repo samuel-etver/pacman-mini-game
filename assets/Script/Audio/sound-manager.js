@@ -51,5 +51,5 @@ cc.Class({
 
     stopAll () {
         cc.audioEngine.stopAll();
-    }
+    },
 });
