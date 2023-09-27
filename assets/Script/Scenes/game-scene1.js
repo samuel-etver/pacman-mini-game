@@ -24,7 +24,8 @@ cc.Class({
         this.onDialogLoseMenuClick = this.onDialogLoseMenuClick.bind(this);
         this.onDialogLoseRetryClick = this.onDialogLoseRetryClick.bind(this); 
         this.onDialogWinMenuClick = this.onDialogWinMenuClick.bind(this);  
-        this.onControlPanelButtonClick = this.onControlPanelButtonClick.bind(this);    
+        this.onControlPanelButtonClick = this.onControlPanelButtonClick.bind(this); 
+        this.onDialogPauseMenuButtonClick = this.onDialogPauseMenuButtonClick.bind(this);   
     },
 
 
@@ -81,6 +82,7 @@ cc.Class({
         globalEventSystem.subscribe('dialog-lose-retry-click', this.onDialogLoseRetryClick);
         globalEventSystem.subscribe('dialog-win-menu-click', this.onDialogWinMenuClick);
         globalEventSystem.subscribe('control-panel-button-click', this.onControlPanelButtonClick);
+        globalEventSystem.subscribe('dialog-pause-menu-button-click', this.onDialogPauseMenuButtonClick);
     },
 
 
@@ -91,6 +93,7 @@ cc.Class({
         globalEventSystem.unsubscribe('dialog-lose-retry-click', this.onDialogLoseRetryClick);
         globalEventSystem.unsubscribe('dialog-win-menu-click', this.onDialogWinMenuClick);
         globalEventSystem.unsubscribe('control-panel-button-click', this.onControlPanelButtonClick);
+        globalEventSystem.unsubscribe('dialog-pause-menu-button-click', this.onDialogPauseMenuButtonClick);
     },
 
 
@@ -117,14 +120,18 @@ cc.Class({
     },
 
 
-    onDialogOptionsMenuClick () {
+    onControlPanelOptionsButtonClick () {
         dialogsFactory.execute(this.node, "Options Dialog");
     },
 
 
-    onDialogPauseMenuClick () {
+    onControlPanelPauseButtonClick () {
+        dialogsFactory.execute(this.node, "Pause Dialog");
+    },
+
+
+    onDialogPauseMenuButtonClick () {
         globalEventSystem.publish('scene-main-menu-show');
-        //dialogsFactory.execute(this.node, "Pause Dialog");
     },
 
 
@@ -141,10 +148,10 @@ cc.Class({
     onControlPanelButtonClick (event, buttonName) {
         switch(buttonName) {
             case 'pause': 
-                this.onDialogPauseMenuClick();
+                this.onControlPanelPauseButtonClick();
                 break;
             case 'options':              
-                this.onDialogOptionsMenuClick();
+                this.onControlPanelOptionsButtonClick();
                 break;
         }
     },

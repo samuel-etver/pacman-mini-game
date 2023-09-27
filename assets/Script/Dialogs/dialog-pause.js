@@ -6,5 +6,16 @@ let dialogsFactory = DialogsFactory.getInstance();
 
 cc.Class({
     extends: cc.Component,
-    
+
+
+    onResumeButtonClick () {
+        dialogsFactory.free (this.node, () => {
+            globalEventSystem.publish('dialog-pause-resume-button-click');
+        });
+    },
+
+
+    onMenuButtonClick () {  
+        globalEventSystem.publish('dialog-pause-menu-button-click');          
+    }    
 });
