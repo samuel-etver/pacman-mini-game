@@ -66,7 +66,7 @@ cc.Class({
             playerLivesCountMax: globalConfig.playerLivesCountMax,
             pauseActivated: false,
         };
-        globalStorage.scene = sceneData; 
+        globalStorage.scene = Object.assign(globalStorage.scene, sceneData); 
         
         this.loadLivesCountPanel();
         this.loadControlPanel();

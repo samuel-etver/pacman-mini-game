@@ -1,9 +1,11 @@
 const GlobalEventSystem = require('global-event-system');
 const GlobalDataFileLoader = require('global-data-file-loader');
+const GlobalStorage = require('global-storage');
 const DialogsFactory = require('dialogs-factory');
 
 let globalEventSystem = GlobalEventSystem.getInstance();
 let globalDataFileLoader = GlobalDataFileLoader.getInstance();
+let globalStorage = GlobalStorage.getInstance();
 let dialogsFactory = DialogsFactory.getInstance();
 
 let MainMenu = cc.Class({
@@ -15,7 +17,11 @@ let MainMenu = cc.Class({
 
 
     onLoad () {
-        cc.director.getCollisionManager().enabled = true;   
+        globalStorage.scene = Object.assign(globalStorage.scene, {
+            pauseActivated: false
+        });
+
+        cc.director.getCollisionManager().enabled = true;           
     },
 
 
