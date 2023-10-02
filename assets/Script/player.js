@@ -473,6 +473,16 @@ cc.Class({
         let scheduler = cc.director.getScheduler();   
         scheduler.pauseTarget(this);   
         if (this.animation) {
+            this.animationStateInPause = {};
+
+            for(let key in animationClipNames) {
+                let clipName = animationClipNames[key];
+                let clipState = this.animation.getAnimationState(clipName);                
+                if(clipState.isPlaying && !clipState.isPaused) {
+                    this.animationStateInPause[key] = true;
+                    this.animation.pause(clipName);
+                }
+            }           
         }  
     },
 
@@ -480,8 +490,13 @@ cc.Class({
     onGameResume () {
         let scheduler = cc.director.getScheduler();
         scheduler.resumeTarget(this);
-        if (this.animation) {
-          
+        if (this.animation && this.animationStateInPause) {
+            for(let key in animationClipNames) {
+                if(this.animationStateInPause[key]) {                    
+                    let clipName = animationClipNames[key];
+                    this.animation.pause(clipName);
+                }
+            }
         }
     }
 });
