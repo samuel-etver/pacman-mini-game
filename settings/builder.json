@@ -1,7 +1,5 @@
 {
-  "excludeScenes": [
-    "bf29e285-f990-4994-be00-51c56b51b154"
-  ],
+  "excludeScenes": [],
   "orientation": {
     "landscapeLeft": true,
     "landscapeRight": true,
@@ -53,5 +51,9 @@
     "skipRecord": false
   },
   "appBundle": false,
-  "agreements": {}
+  "agreements": {},
+  "openharmony": {
+    "packageName": "com.cocos.openharmony",
+    "REMOTE_SERVER_ROOT": ""
+  }
 }

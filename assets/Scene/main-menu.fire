@@ -265,7 +265,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 1000,
-      "height": 450
+      "height": 500
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
